@@ -1152,6 +1152,174 @@
       flex:1 1 180px;
     }
 
+    .admin-section{
+      grid-column:1/-1;
+      padding:18px;
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.05);
+    }
+    .admin-section h4{
+      margin:0 0 8px;
+      font-size:18px;
+      letter-spacing:-.02em;
+    }
+    .admin-section > p{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.7;
+    }
+    .admin-branding-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+    .admin-brand-card{
+      padding:16px;
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.04);
+      display:grid;
+      gap:12px;
+    }
+    .admin-brand-preview-wrap{
+      aspect-ratio:16/9;
+    }
+    .admin-brand-logo-wrap{
+      aspect-ratio:1/1;
+      max-width:220px;
+    }
+    .admin-brand-preview{
+      background:rgba(255,255,255,0.03);
+    }
+    .admin-inline-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:14px;
+    }
+    .admin-inquiry-list{
+      display:grid;
+      gap:12px;
+      margin-top:6px;
+    }
+    .admin-inquiry-empty{
+      padding:16px;
+      border-radius:16px;
+      border:1px dashed var(--line);
+      color:var(--muted);
+      font-size:14px;
+      background:rgba(255,255,255,0.03);
+    }
+    .admin-inquiry-row{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:14px;
+      align-items:start;
+      padding:16px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.04);
+    }
+    .admin-inquiry-main strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:15px;
+    }
+    .admin-inquiry-meta{
+      display:block;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.6;
+      margin-bottom:8px;
+    }
+    .admin-inquiry-main p{
+      margin:0;
+      color:var(--text);
+      font-size:13px;
+      line-height:1.65;
+      white-space:pre-wrap;
+      word-break:break-word;
+    }
+    .admin-inquiry-controls{
+      display:grid;
+      gap:10px;
+      min-width:180px;
+    }
+    .admin-inquiry-controls select{
+      width:100%;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.05);
+      color:var(--text);
+      outline:none;
+    }
+    .admin-security-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+      margin-bottom:14px;
+    }
+    .admin-session-box{
+      min-height:51px;
+      display:flex;
+      align-items:center;
+      padding:14px 15px;
+      border-radius:15px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.05);
+      color:var(--muted);
+      font-weight:700;
+    }
+    .admin-note-small{
+      margin:0;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.6;
+    }
+    .admin-hidden-input{
+      display:none;
+    }
+    .admin-auth-modal{
+      position:fixed;
+      inset:0;
+      display:none;
+      place-items:center;
+      padding:20px;
+      z-index:1450;
+      background:rgba(0,0,0,0.55);
+    }
+    .admin-auth-modal.show{
+      display:grid;
+    }
+    .admin-auth-card{
+      width:min(420px,100%);
+      padding:24px;
+      border-radius:24px;
+      background:var(--surface-solid);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+    .admin-auth-card h3{
+      margin:0 0 8px;
+      font-size:26px;
+    }
+    .admin-auth-card p{
+      margin:0 0 14px;
+      color:var(--muted);
+      line-height:1.7;
+    }
+    .inquiry-status-line{
+      display:inline-block;
+      margin-top:6px;
+      color:var(--primary);
+      font-weight:800;
+      font-size:12px;
+      letter-spacing:.02em;
+      text-transform:uppercase;
+    }
     .reveal{
       opacity:0;
       transform:translateY(24px);
@@ -1202,8 +1370,14 @@
       .hero-title{font-size:clamp(38px,11vw,58px)}
       .hero-actions,.hero-badges{flex-direction:column;align-items:stretch}
       .btn{width:100%}
-      .hero-stats,.service-grid,.testimonial-grid,.gallery-grid,.fields,.mission-grid,.footer-grid,.admin-grid,.admin-gallery-tools{
+      .hero-stats,.service-grid,.testimonial-grid,.gallery-grid,.fields,.mission-grid,.footer-grid,.admin-grid,.admin-gallery-tools,.admin-branding-grid,.admin-security-grid{
         grid-template-columns:1fr;
+      }
+      .admin-inquiry-row{
+        grid-template-columns:1fr;
+      }
+      .admin-inquiry-controls{
+        min-width:0;
       }
       .nav-links{
         flex-wrap:nowrap;
@@ -1482,7 +1656,7 @@
             <h3 class="editable" data-key="projectHeadline">Supply and Installation of Aluminum Wardrobe Cabinet with Sliding Door Mirror Glass</h3>
             <p class="editable" data-key="projectDescription">Designed with built-in drawers for style, durability, and space-saving functionality, this completed wardrobe cabinet project reflects our commitment to sleek finishes, smart storage solutions, and long-lasting craftsmanship.</p>
           </div>
-          <div class="featured-image">
+          <div class="featured-image" id="featuredProjectImage" data-default-image="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80">
             <div class="featured-tag">Modern • Sleek • Long-Lasting</div>
           </div>
         </div>
@@ -1796,6 +1970,22 @@
   <button class="admin-hint" id="adminHint" title="Press Ctrl + Shift + L" aria-hidden="true" tabindex="-1">⚙ Admin</button>
   <div class="admin-backdrop" id="adminBackdrop"></div>
 
+  <div class="admin-auth-modal glass" id="adminAuthModal">
+    <div class="admin-auth-card">
+      <h3>Admin Login</h3>
+      <p>Enter your admin password to unlock the hidden admin panel.</p>
+      <div class="field">
+        <label for="adminLoginPassword">Admin Password</label>
+        <input id="adminLoginPassword" type="password" placeholder="Enter admin password" autocomplete="current-password" />
+      </div>
+      <div class="admin-actions">
+        <button class="btn" type="button" id="adminLoginBtn">Unlock Admin</button>
+        <button class="btn ghost" type="button" id="adminAuthCancel">Cancel</button>
+      </div>
+      <p class="admin-note-small">Default password: <strong>admin123</strong></p>
+    </div>
+  </div>
+
   <div class="admin-panel glass" id="adminPanel">
     <div class="admin-header">
       <div>
@@ -1972,9 +2162,85 @@
 
     </div>
 
+      <div class="field full">
+        <div class="admin-section">
+          <h4>Branding Controls</h4>
+          <p>Upload a company logo and featured project photo while keeping the live layout unchanged.</p>
+          <div class="admin-branding-grid">
+            <div class="admin-brand-card">
+              <div class="admin-gallery-preview-wrap admin-brand-preview-wrap admin-brand-logo-wrap">
+                <img id="adminLogoPreview" class="admin-gallery-preview admin-brand-preview" src="" alt="Company logo preview" />
+              </div>
+              <div class="admin-gallery-status" id="adminLogoStatus">Using default image</div>
+              <div class="field">
+                <label for="adminLogoFile">Upload Company Logo</label>
+                <input id="adminLogoFile" type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" />
+              </div>
+              <p class="admin-gallery-note">Upload PNG or JPG/JPEG for the logo. The image is resized before saving to localStorage.</p>
+              <div class="admin-gallery-card-actions">
+                <button class="btn alt" type="button" id="resetLogoImage">Reset Logo</button>
+              </div>
+            </div>
+
+            <div class="admin-brand-card">
+              <div class="admin-gallery-preview-wrap admin-brand-preview-wrap">
+                <img id="adminFeaturedPreview" class="admin-gallery-preview admin-brand-preview" src="" alt="Featured project image preview" />
+              </div>
+              <div class="admin-gallery-status" id="adminFeaturedStatus">Using default image</div>
+              <div class="field">
+                <label for="adminFeaturedFile">Upload Featured Project Image</label>
+                <input id="adminFeaturedFile" type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" />
+              </div>
+              <p class="admin-gallery-note">Upload PNG or JPG/JPEG to replace the featured project image without moving the section.</p>
+              <div class="admin-gallery-card-actions">
+                <button class="btn alt" type="button" id="resetFeaturedImage">Reset Featured Image</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field full">
+        <div class="admin-section">
+          <h4>Inquiry Manager</h4>
+          <p>Review saved inquiries, update their status, remove old entries, and export records in JSON or CSV format.</p>
+          <div class="admin-inline-actions">
+            <button class="btn alt" type="button" id="exportInquiriesJson">Export Inquiries JSON</button>
+            <button class="btn alt" type="button" id="exportInquiriesCsv">Export Inquiries CSV</button>
+          </div>
+          <div class="admin-inquiry-list" id="adminInquiryList"></div>
+        </div>
+      </div>
+
+      <div class="field full">
+        <div class="admin-section">
+          <h4>Admin Security & Backup</h4>
+          <p>Lock or unlock the hidden admin panel, change the admin password, and export or restore a full website backup.</p>
+          <div class="admin-security-grid">
+            <div class="field">
+              <label for="adminNewPassword">New Admin Password</label>
+              <input id="adminNewPassword" type="password" placeholder="Leave blank to keep current password" autocomplete="new-password" />
+            </div>
+            <div class="field">
+              <label>Admin Session</label>
+              <div class="admin-session-box" id="adminSessionState">Locked until login</div>
+            </div>
+          </div>
+          <div class="admin-inline-actions">
+            <button class="btn alt" type="button" id="lockAdminSession">Lock Admin Session</button>
+            <button class="btn alt" type="button" id="exportBackupBtn">Export Full Backup</button>
+            <button class="btn alt" type="button" id="importBackupBtn">Import Backup</button>
+            <button class="btn ghost" type="button" id="resetAllDataBtn">Reset All Saved Data</button>
+          </div>
+          <input id="importBackupInput" class="admin-hidden-input" type="file" accept="application/json,.json" />
+          <p class="admin-note-small">Your admin session stays unlocked in this browser tab until you lock it or close the tab.</p>
+        </div>
+      </div>
+
     <div class="admin-actions">
       <button class="btn" id="saveAdmin">Save Changes</button>
       <button class="btn alt" id="toggleInlineEdit">Enable Edit Mode</button>
+      <button class="btn ghost" type="button" id="lockAdminFromActions">Lock Session</button>
       <button class="btn ghost" id="resetAdmin">Reset Content</button>
     </div>
   </div>
@@ -1985,6 +2251,10 @@
       const INQUIRIES_KEY = "jrl_construction_inquiries_v1";
       const THEME_KEY = "jrl_construction_theme_v1";
       const GALLERY_IMAGES_KEY = "jrl_construction_gallery_images_v1";
+      const BRANDING_KEY = "jrl_construction_branding_v1";
+      const ADMIN_SETTINGS_KEY = "jrl_construction_admin_settings_v1";
+      const ADMIN_SESSION_KEY = "jrl_construction_admin_session_v1";
+      const INQUIRY_STATUSES = ["New", "Contacted", "Ongoing", "Closed"];
 
       const defaults = {
         businessName: "John Ronald Lomboy Construction Co. LTD.",
@@ -2061,25 +2331,10 @@
         "glass-blue"
       ];
 
-      function safeParse(value, fallback){
-        try{return JSON.parse(value)}catch(e){return fallback}
-      }
-
-      function sanitizeGalleryImages(images){
-        const cleaned = {};
-        if(images && typeof images === "object"){
-          Object.keys(images).forEach(key=>{
-            const value = images[key];
-            if(typeof value === "string" && value.startsWith("data:image/")){
-              cleaned[key] = value;
-            }
-          });
-        }
-        return cleaned;
-      }
-
-      const galleryKeys = Array.from({length: 6}, (_, index) => `gallery${index + 1}`);
+      const editableNodes = () => document.querySelectorAll(".editable");
+      const editableLinks = () => document.querySelectorAll(".editable-link");
       const galleryItems = () => Array.from(document.querySelectorAll(".gallery-item"));
+      const galleryKeys = Array.from({length: 6}, (_, index) => `gallery${index + 1}`);
       const defaultGalleryImages = galleryKeys.reduce((acc, key, index)=>{
         const item = galleryItems()[index];
         const imageEl = item ? item.querySelector("img") : null;
@@ -2097,70 +2352,126 @@
         acc[key] = (imageEl && imageEl.getAttribute("alt")) || `Gallery Image ${index + 1}`;
         return acc;
       }, {});
-      let galleryImages = sanitizeGalleryImages(safeParse(localStorage.getItem(GALLERY_IMAGES_KEY), {}));
-      let activeLightboxKey = null;
 
+      const brandingDefaults = {
+        logo: (document.getElementById("brandLogo") && document.getElementById("brandLogo").getAttribute("src")) || "",
+        featuredImage: (document.getElementById("featuredProjectImage") && (document.getElementById("featuredProjectImage").dataset.defaultImage || document.getElementById("featuredProjectImage").dataset.image)) || ""
+      };
+      const adminDefaults = { password: "admin123" };
+
+      function safeParse(value, fallback){
+        try{return JSON.parse(value)}catch(e){return fallback}
+      }
+
+      function sanitizeImageStore(images, allowRemote){
+        const cleaned = {};
+        if(images && typeof images === "object"){
+          Object.keys(images).forEach(key=>{
+            const value = images[key];
+            if(typeof value !== "string") return;
+            const trimmed = value.trim();
+            if(trimmed.startsWith("data:image/") || (allowRemote && /^https?:\/\//i.test(trimmed))){
+              cleaned[key] = trimmed;
+            }
+          });
+        }
+        return cleaned;
+      }
+
+      function sanitizeAdminSettings(settings){
+        const merged = {...adminDefaults, ...(settings && typeof settings === "object" ? settings : {})};
+        if(typeof merged.password !== "string" || !merged.password.trim()){
+          merged.password = adminDefaults.password;
+        }
+        merged.password = merged.password.trim();
+        return merged;
+      }
+
+      function nowId(prefix){
+        return `${prefix}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+      }
+
+      let galleryImages = sanitizeImageStore(safeParse(localStorage.getItem(GALLERY_IMAGES_KEY), {}), false);
+      let branding = sanitizeImageStore(safeParse(localStorage.getItem(BRANDING_KEY), {}), true);
+      let adminSettings = sanitizeAdminSettings(safeParse(localStorage.getItem(ADMIN_SETTINGS_KEY), {}));
       let content = {...defaults, ...safeParse(localStorage.getItem(CONTENT_KEY), {})};
       let editMode = false;
-
-      const editableNodes = () => document.querySelectorAll(".editable");
-      const editableLinks = () => document.querySelectorAll(".editable-link");
-
-      function applyContent(){
-        editableNodes().forEach(node=>{
-          const key = node.dataset.key;
-          if(key && content[key] !== undefined) node.textContent = content[key];
-        });
-
-        editableLinks().forEach(node=>{
-          const key = node.dataset.key;
-          if(key && content[key] !== undefined) node.textContent = content[key];
-        });
-
-        const logo = document.getElementById("brandLogo");
-        if(logo){
-          logo.alt = (content.businessName || "Company") + " Logo";
-        }
-
-        document.getElementById("adminBusinessName").value = content.businessName || "";
-        document.getElementById("adminIndustryShort").value = content.industryShort || "";
-        document.getElementById("adminHeroTitle").value = content.heroTitle || "";
-        document.getElementById("adminHeroSubtitle").value = content.heroSubtitle || "";
-        document.getElementById("adminAboutText").value = content.aboutText || "";
-        document.getElementById("adminLocation").value = content.location || "";
-        document.getElementById("adminEmail").value = content.email || "";
-        document.getElementById("adminPhone1").value = content.phone1 || "";
-        document.getElementById("adminPhone2").value = content.phone2 || "";
-        document.getElementById("adminFacebook").value = content.facebook || "";
-        document.getElementById("adminGallery1").value = content.gallery1 || "";
-        document.getElementById("adminGallery2").value = content.gallery2 || "";
-        document.getElementById("adminGallery3").value = content.gallery3 || "";
-        document.getElementById("adminGallery4").value = content.gallery4 || "";
-        document.getElementById("adminGallery5").value = content.gallery5 || "";
-        document.getElementById("adminGallery6").value = content.gallery6 || "";
-
-        applyGalleryImages();
-      }
+      let activeLightboxKey = null;
 
       function persistContent(){
         localStorage.setItem(CONTENT_KEY, JSON.stringify(content));
       }
 
       function persistGalleryImages(){
-        galleryImages = sanitizeGalleryImages(galleryImages);
-        try{
-          if(Object.keys(galleryImages).length){
-            localStorage.setItem(GALLERY_IMAGES_KEY, JSON.stringify(galleryImages));
-          }else{
-            localStorage.removeItem(GALLERY_IMAGES_KEY);
-          }
-        }catch(error){
-          throw new Error("Storage is full. Use a smaller image or reset a saved gallery photo.");
+        galleryImages = sanitizeImageStore(galleryImages, false);
+        if(Object.keys(galleryImages).length){
+          localStorage.setItem(GALLERY_IMAGES_KEY, JSON.stringify(galleryImages));
+        }else{
+          localStorage.removeItem(GALLERY_IMAGES_KEY);
         }
+      }
+
+      function persistBranding(){
+        branding = sanitizeImageStore(branding, true);
+        if(Object.keys(branding).length){
+          localStorage.setItem(BRANDING_KEY, JSON.stringify(branding));
+        }else{
+          localStorage.removeItem(BRANDING_KEY);
+        }
+      }
+
+      function persistAdminSettings(){
+        adminSettings = sanitizeAdminSettings(adminSettings);
+        localStorage.setItem(ADMIN_SETTINGS_KEY, JSON.stringify(adminSettings));
+      }
+
+      function escapeHtml(str){
+        return String(str)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
+
+      function showToast(message){
+        const wrap = document.getElementById("toastWrap");
+        const toast = document.createElement("div");
+        toast.className = "toast";
+        toast.textContent = message;
+        wrap.appendChild(toast);
+        setTimeout(()=>{
+          toast.style.opacity = "0";
+          toast.style.transform = "translateY(16px)";
+          setTimeout(()=>toast.remove(), 260);
+        }, 2400);
+      }
+
+      function getTheme(){
+        return localStorage.getItem(THEME_KEY) || "blue-white";
       }
 
       function getGallerySrc(key){
         return galleryImages[key] || defaultGalleryImages[key] || "";
+      }
+
+      function getBrandingSrc(key){
+        return branding[key] || brandingDefaults[key] || "";
+      }
+
+      function applyTheme(theme){
+        const validTheme = themes.includes(theme) ? theme : "blue-white";
+        document.body.setAttribute("data-theme", validTheme);
+        document.getElementById("themeSelect").value = validTheme;
+        localStorage.setItem(THEME_KEY, validTheme);
+      }
+
+      function cycleTheme(){
+        const current = document.body.getAttribute("data-theme") || "blue-white";
+        const currentIndex = themes.indexOf(current);
+        const nextTheme = themes[(currentIndex + 1) % themes.length];
+        applyTheme(nextTheme);
+        showToast("Theme changed to " + nextTheme.replace(/-/g, " "));
       }
 
       function setAdminGalleryStatus(index, message, isError){
@@ -2170,11 +2481,48 @@
         status.dataset.state = isError ? "error" : "ok";
       }
 
+      function setBrandingStatus(type, message, isError){
+        const status = document.getElementById(type === "logo" ? "adminLogoStatus" : "adminFeaturedStatus");
+        if(!status) return;
+        status.textContent = message;
+        status.dataset.state = isError ? "error" : "ok";
+      }
+
+      function applyBranding(){
+        const logoSrc = getBrandingSrc("logo");
+        const featuredSrc = getBrandingSrc("featuredImage");
+        const logo = document.getElementById("brandLogo");
+        const featured = document.getElementById("featuredProjectImage");
+        const logoPreview = document.getElementById("adminLogoPreview");
+        const featuredPreview = document.getElementById("adminFeaturedPreview");
+
+        if(logo && logoSrc){
+          logo.src = logoSrc;
+          logo.alt = (content.businessName || "Company") + " Logo";
+        }
+        if(logoPreview){
+          logoPreview.src = logoSrc;
+        }
+        if(featured && featuredSrc){
+          featured.dataset.image = featuredSrc;
+          const safeUrl = featuredSrc.replace(/"/g, '\\"');
+          featured.style.backgroundImage = `linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.32)), url("${safeUrl}")`;
+          featured.style.backgroundPosition = "center";
+          featured.style.backgroundSize = "cover";
+          featured.style.backgroundRepeat = "no-repeat";
+        }
+        if(featuredPreview){
+          featuredPreview.src = featuredSrc;
+        }
+
+        setBrandingStatus("logo", branding.logo ? "Custom image saved" : "Using default image", false);
+        setBrandingStatus("featuredImage", branding.featuredImage ? "Custom image saved" : "Using default image", false);
+      }
+
       function applyGalleryImages(){
         galleryItems().forEach((item, index)=>{
           const key = galleryKeys[index];
           if(!key) return;
-
           const labelNode = item.querySelector(".gallery-label");
           const labelText = (content[key] || (labelNode && labelNode.textContent.trim()) || defaultGalleryAlt[key] || `Gallery Image ${index + 1}`).trim();
           const src = getGallerySrc(key);
@@ -2207,7 +2555,40 @@
         }
       }
 
-      function isAllowedGalleryFile(file){
+      function applyContent(){
+        editableNodes().forEach(node=>{
+          const key = node.dataset.key;
+          if(key && content[key] !== undefined) node.textContent = content[key];
+        });
+
+        editableLinks().forEach(node=>{
+          const key = node.dataset.key;
+          if(key && content[key] !== undefined) node.textContent = content[key];
+        });
+
+        document.getElementById("adminBusinessName").value = content.businessName || "";
+        document.getElementById("adminIndustryShort").value = content.industryShort || "";
+        document.getElementById("adminHeroTitle").value = content.heroTitle || "";
+        document.getElementById("adminHeroSubtitle").value = content.heroSubtitle || "";
+        document.getElementById("adminAboutText").value = content.aboutText || "";
+        document.getElementById("adminLocation").value = content.location || "";
+        document.getElementById("adminEmail").value = content.email || "";
+        document.getElementById("adminPhone1").value = content.phone1 || "";
+        document.getElementById("adminPhone2").value = content.phone2 || "";
+        document.getElementById("adminFacebook").value = content.facebook || "";
+        document.getElementById("adminGallery1").value = content.gallery1 || "";
+        document.getElementById("adminGallery2").value = content.gallery2 || "";
+        document.getElementById("adminGallery3").value = content.gallery3 || "";
+        document.getElementById("adminGallery4").value = content.gallery4 || "";
+        document.getElementById("adminGallery5").value = content.gallery5 || "";
+        document.getElementById("adminGallery6").value = content.gallery6 || "";
+
+        applyBranding();
+        applyGalleryImages();
+        updateAdminSessionState();
+      }
+
+      function isAllowedImageFile(file){
         if(!file) return false;
         const name = (file.name || "").toLowerCase();
         return file.type === "image/png" || file.type === "image/jpeg" || /\.(png|jpe?g)$/i.test(name);
@@ -2245,16 +2626,21 @@
         ctx.drawImage(image, 0, 0, width, height);
       }
 
-      async function optimizeGalleryImage(file){
+      async function optimizeImage(file, options){
+        const settings = {
+          charLimit: 850000,
+          maxWidth: 1600,
+          maxHeight: 1200,
+          minWidth: 480,
+          minHeight: 320,
+          ...options
+        };
+
         const image = await loadImageFromFile(file);
         const canvas = document.createElement("canvas");
-        const charLimit = 850000;
-        const maxWidth = 1600;
-        const maxHeight = 1200;
-
         let width = image.naturalWidth || image.width;
         let height = image.naturalHeight || image.height;
-        const fitRatio = Math.min(1, maxWidth / width, maxHeight / height);
+        const fitRatio = Math.min(1, settings.maxWidth / width, settings.maxHeight / height);
         width = Math.max(1, Math.round(width * fitRatio));
         height = Math.max(1, Math.round(height * fitRatio));
 
@@ -2263,27 +2649,24 @@
 
         drawOptimizedImage(canvas, image, width, height, outputType);
         let dataUrl = canvas.toDataURL(outputType, quality);
-
         let attempts = 0;
-        while(dataUrl.length > charLimit && attempts < 10){
-          attempts += 1;
 
+        while(dataUrl.length > settings.charLimit && attempts < 10){
+          attempts += 1;
           if(outputType === "image/png"){
             outputType = "image/jpeg";
             quality = 0.88;
           }else{
             quality = Math.max(0.52, quality - 0.08);
           }
-
-          const scale = dataUrl.length > charLimit * 1.35 ? 0.86 : 0.92;
-          width = Math.max(640, Math.round(width * scale));
-          height = Math.max(480, Math.round(height * scale));
-
+          const scale = dataUrl.length > settings.charLimit * 1.35 ? 0.86 : 0.92;
+          width = Math.max(settings.minWidth, Math.round(width * scale));
+          height = Math.max(settings.minHeight, Math.round(height * scale));
           drawOptimizedImage(canvas, image, width, height, outputType);
           dataUrl = canvas.toDataURL(outputType, quality);
         }
 
-        if(dataUrl.length > charLimit){
+        if(dataUrl.length > settings.charLimit){
           throw new Error("Image is too large to save safely. Please use a smaller PNG or JPG/JPEG.");
         }
 
@@ -2293,13 +2676,10 @@
       async function handleGalleryUpload(index, file){
         const key = galleryKeys[index - 1];
         if(!key) return;
-
         const previousImages = {...galleryImages};
-
         try{
           setAdminGalleryStatus(index, "Processing image...", false);
-          const optimizedImage = await optimizeGalleryImage(file);
-          galleryImages[key] = optimizedImage;
+          galleryImages[key] = await optimizeImage(file, {charLimit: 850000, maxWidth: 1600, maxHeight: 1200, minWidth: 640, minHeight: 480});
           persistGalleryImages();
           applyGalleryImages();
           showToast(`Gallery Image ${index} updated successfully.`);
@@ -2314,88 +2694,77 @@
       function resetGalleryImage(index){
         const key = galleryKeys[index - 1];
         if(!key) return;
-
         if(!galleryImages[key]){
           setAdminGalleryStatus(index, "Already using default image", false);
           showToast(`Gallery Image ${index} is already using the default photo.`);
           return;
         }
-
         delete galleryImages[key];
+        persistGalleryImages();
+        applyGalleryImages();
+        showToast(`Gallery Image ${index} reset to default.`);
+      }
 
+      async function handleBrandingUpload(type, file){
+        const previousBranding = {...branding};
         try{
-          persistGalleryImages();
-          applyGalleryImages();
-          showToast(`Gallery Image ${index} reset to default.`);
+          setBrandingStatus(type, "Processing image...", false);
+          branding[type] = await optimizeImage(file, type === "logo" ? {charLimit: 420000, maxWidth: 700, maxHeight: 700, minWidth: 220, minHeight: 220} : {charLimit: 900000, maxWidth: 1800, maxHeight: 1100, minWidth: 900, minHeight: 520});
+          persistBranding();
+          applyBranding();
+          showToast(type === "logo" ? "Company logo updated successfully." : "Featured project image updated successfully.");
         }catch(error){
+          branding = previousBranding;
+          applyBranding();
+          setBrandingStatus(type, error.message, true);
           showToast(error.message);
         }
       }
 
-      function bindGalleryAdminTools(){
-        galleryKeys.forEach((key, index)=>{
-          const displayIndex = index + 1;
-          const uploadInput = document.getElementById(`adminGalleryFile${displayIndex}`);
-          const resetButton = document.getElementById(`resetGalleryImage${displayIndex}`);
+      function resetBrandingImage(type){
+        if(!branding[type]){
+          setBrandingStatus(type, "Already using default image", false);
+          showToast(type === "logo" ? "Logo is already using the default image." : "Featured image is already using the default photo.");
+          return;
+        }
+        delete branding[type];
+        persistBranding();
+        applyBranding();
+        showToast(type === "logo" ? "Logo reset to default." : "Featured project image reset to default.");
+      }
 
-          if(uploadInput){
-            uploadInput.addEventListener("change", async function(){
-              const file = this.files && this.files[0];
-              if(!file) return;
-
-              if(!isAllowedGalleryFile(file)){
-                this.value = "";
-                setAdminGalleryStatus(displayIndex, "Invalid file. Use PNG or JPG/JPEG only.", true);
-                showToast("Only PNG and JPG/JPEG files are allowed.");
-                return;
-              }
-
-              await handleGalleryUpload(displayIndex, file);
-              this.value = "";
-            });
-          }
-
-          if(resetButton){
-            resetButton.addEventListener("click", ()=>resetGalleryImage(displayIndex));
-          }
+      function normalizeInquiries(items){
+        if(!Array.isArray(items)) return [];
+        return items.map((item, index)=>{
+          const normalized = item && typeof item === "object" ? {...item} : {};
+          if(!normalized.id) normalized.id = nowId(`inq${index}`);
+          if(!INQUIRY_STATUSES.includes(normalized.status)) normalized.status = "New";
+          normalized.fullName = String(normalized.fullName || "");
+          normalized.phoneNumber = String(normalized.phoneNumber || "");
+          normalized.emailField = String(normalized.emailField || "");
+          normalized.serviceSelect = String(normalized.serviceSelect || "");
+          normalized.message = String(normalized.message || "");
+          normalized.date = String(normalized.date || new Date().toLocaleDateString());
+          return normalized;
         });
       }
 
-      function showToast(message){
-        const wrap = document.getElementById("toastWrap");
-        const toast = document.createElement("div");
-        toast.className = "toast";
-        toast.textContent = message;
-        wrap.appendChild(toast);
-
-        setTimeout(()=>{
-          toast.style.opacity = "0";
-          toast.style.transform = "translateY(16px)";
-          setTimeout(()=>toast.remove(), 260);
-        }, 2400);
-      }
-
-      function escapeHtml(str){
-        return String(str)
-          .replace(/&/g, "&amp;")
-          .replace(/</g, "&lt;")
-          .replace(/>/g, "&gt;")
-          .replace(/"/g, "&quot;")
-          .replace(/'/g, "&#039;");
-      }
-
       function getInquiries(){
-        return safeParse(localStorage.getItem(INQUIRIES_KEY), []);
+        const raw = safeParse(localStorage.getItem(INQUIRIES_KEY), []);
+        const normalized = normalizeInquiries(raw);
+        if(JSON.stringify(raw) !== JSON.stringify(normalized)){
+          localStorage.setItem(INQUIRIES_KEY, JSON.stringify(normalized));
+        }
+        return normalized;
       }
 
       function saveInquiries(items){
-        localStorage.setItem(INQUIRIES_KEY, JSON.stringify(items));
+        localStorage.setItem(INQUIRIES_KEY, JSON.stringify(normalizeInquiries(items)));
       }
 
       function renderInquiries(){
         const list = document.getElementById("inquiryList");
         const items = getInquiries();
-
         if(!items.length){
           list.innerHTML = `
             <div class="inquiry-item">
@@ -2408,50 +2777,415 @@
           `;
           return;
         }
-
         list.innerHTML = items.slice().reverse().slice(0,5).map(item => `
           <div class="inquiry-item">
             <div>
               <h4>${escapeHtml(item.fullName)} • ${escapeHtml(item.serviceSelect)}</h4>
-              <p>${escapeHtml(item.phoneNumber)} • ${escapeHtml(item.emailField)}<br>${escapeHtml(item.message)}</p>
+              <p>${escapeHtml(item.phoneNumber)} • ${escapeHtml(item.emailField)}<br>${escapeHtml(item.message)}<br><span class="inquiry-status-line">${escapeHtml(item.status)}</span></p>
             </div>
             <div class="inquiry-date">${escapeHtml(item.date)}</div>
           </div>
         `).join("");
       }
 
-      document.getElementById("inquiryForm").addEventListener("submit", function(e){
-        e.preventDefault();
-        const formData = new FormData(this);
-        const data = Object.fromEntries(formData.entries());
-
-        if(!data.fullName || !data.phoneNumber || !data.emailField || !data.serviceSelect || !data.message){
-          showToast("Please complete all required fields.");
+      function renderAdminInquiries(){
+        const list = document.getElementById("adminInquiryList");
+        if(!list) return;
+        const items = getInquiries().slice().reverse();
+        if(!items.length){
+          list.innerHTML = '<div class="admin-inquiry-empty">No inquiries have been saved yet.</div>';
           return;
         }
+        list.innerHTML = items.map(item => `
+          <div class="admin-inquiry-row" data-inquiry-id="${escapeHtml(item.id)}">
+            <div class="admin-inquiry-main">
+              <strong>${escapeHtml(item.fullName)} • ${escapeHtml(item.serviceSelect)}</strong>
+              <span class="admin-inquiry-meta">${escapeHtml(item.date)} • ${escapeHtml(item.emailField)} • ${escapeHtml(item.phoneNumber)}</span>
+              <p>${escapeHtml(item.message)}</p>
+            </div>
+            <div class="admin-inquiry-controls">
+              <select data-action="status" data-id="${escapeHtml(item.id)}">
+                ${INQUIRY_STATUSES.map(status => `<option value="${escapeHtml(status)}" ${status === item.status ? 'selected' : ''}>${escapeHtml(status)}</option>`).join("")}
+              </select>
+              <button class="btn ghost" type="button" data-action="delete" data-id="${escapeHtml(item.id)}">Delete Inquiry</button>
+            </div>
+          </div>
+        `).join("");
+      }
 
-        const items = getInquiries();
-        items.push({
-          ...data,
-          date: new Date().toLocaleDateString()
-        });
+      function updateInquiryStatus(id, status){
+        if(!INQUIRY_STATUSES.includes(status)) return;
+        const items = getInquiries().map(item => item.id === id ? {...item, status} : item);
         saveInquiries(items);
-        this.reset();
         renderInquiries();
-        showToast("Inquiry submitted successfully.");
-      });
+        renderAdminInquiries();
+        showToast(`Inquiry marked as ${status}.`);
+      }
 
-      document.querySelectorAll(".gallery-item").forEach(item=>{
-        item.addEventListener("click", ()=>{
-          document.getElementById("lightboxImg").src = item.dataset.image;
-          document.getElementById("lightbox").classList.add("active");
+      function deleteInquiry(id){
+        const items = getInquiries().filter(item => item.id !== id);
+        saveInquiries(items);
+        renderInquiries();
+        renderAdminInquiries();
+        showToast("Inquiry deleted.");
+      }
+
+      function buildMailtoLink(data){
+        const subject = encodeURIComponent("New Inquiry - John Ronald Lomboy Construction");
+        const body = encodeURIComponent([
+          "New inquiry received:",
+          "",
+          `Full Name: ${data.fullName || ""}`,
+          `Phone Number: ${data.phoneNumber || ""}`,
+          `Email: ${data.emailField || ""}`,
+          `Service Needed: ${data.serviceSelect || ""}`,
+          "",
+          "Message:",
+          data.message || ""
+        ].join("\n"));
+        return `mailto:johnronald1127@gmail.com?subject=${subject}&body=${body}`;
+      }
+
+      function openInquiryDraft(data){
+        const mailtoLink = buildMailtoLink(data);
+        setTimeout(()=>{
+          window.location.href = mailtoLink;
+        }, 140);
+      }
+
+      function downloadFile(filename, content, mimeType){
+        const blob = new Blob([content], {type: mimeType});
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        setTimeout(()=>URL.revokeObjectURL(url), 1000);
+      }
+
+      function exportInquiriesJson(){
+        downloadFile("inquiries.json", JSON.stringify(getInquiries(), null, 2), "application/json");
+        showToast("Inquiries exported as JSON.");
+      }
+
+      function escapeCsv(value){
+        const stringValue = String(value ?? "");
+        return `"${stringValue.replace(/"/g, '""')}"`;
+      }
+
+      function exportInquiriesCsv(){
+        const rows = getInquiries();
+        const headers = ["ID", "Date", "Status", "Full Name", "Phone Number", "Email", "Service Needed", "Message"];
+        const lines = [headers.map(escapeCsv).join(",")];
+        rows.forEach(item=>{
+          lines.push([
+            item.id,
+            item.date,
+            item.status,
+            item.fullName,
+            item.phoneNumber,
+            item.emailField,
+            item.serviceSelect,
+            item.message
+          ].map(escapeCsv).join(","));
         });
-      });
+        downloadFile("inquiries.csv", lines.join("\n"), "text/csv;charset=utf-8");
+        showToast("Inquiries exported as CSV.");
+      }
+
+      function buildBackupPayload(){
+        return {
+          exportedAt: new Date().toISOString(),
+          content,
+          inquiries: getInquiries(),
+          theme: getTheme(),
+          galleryImages: sanitizeImageStore(galleryImages, false),
+          branding: sanitizeImageStore(branding, true),
+          adminSettings: sanitizeAdminSettings(adminSettings)
+        };
+      }
+
+      function exportFullBackup(){
+        downloadFile("jrl-construction-backup.json", JSON.stringify(buildBackupPayload(), null, 2), "application/json");
+        showToast("Full backup exported.");
+      }
+
+      function applyBackupPayload(payload){
+        if(!payload || typeof payload !== "object") throw new Error("Invalid backup file.");
+        if(payload.content && typeof payload.content === "object"){
+          content = {...defaults, ...payload.content};
+          persistContent();
+        }
+        if(Array.isArray(payload.inquiries)){
+          saveInquiries(payload.inquiries);
+        }
+        if(payload.theme){
+          applyTheme(payload.theme);
+        }
+        if(payload.galleryImages && typeof payload.galleryImages === "object"){
+          galleryImages = sanitizeImageStore(payload.galleryImages, false);
+          persistGalleryImages();
+        }
+        if(payload.branding && typeof payload.branding === "object"){
+          branding = sanitizeImageStore(payload.branding, true);
+          persistBranding();
+        }
+        if(payload.adminSettings && typeof payload.adminSettings === "object"){
+          adminSettings = sanitizeAdminSettings(payload.adminSettings);
+          persistAdminSettings();
+        }
+        applyContent();
+        renderInquiries();
+        renderAdminInquiries();
+        showToast("Backup imported successfully.");
+      }
+
+      function resetAllSavedData(){
+        localStorage.removeItem(CONTENT_KEY);
+        localStorage.removeItem(INQUIRIES_KEY);
+        localStorage.removeItem(THEME_KEY);
+        localStorage.removeItem(GALLERY_IMAGES_KEY);
+        localStorage.removeItem(BRANDING_KEY);
+        localStorage.removeItem(ADMIN_SETTINGS_KEY);
+        sessionStorage.removeItem(ADMIN_SESSION_KEY);
+        galleryImages = {};
+        branding = {};
+        adminSettings = {...adminDefaults};
+        content = {...defaults};
+        if(editMode) toggleInlineEdit(true);
+        applyTheme("blue-white");
+        applyContent();
+        renderInquiries();
+        renderAdminInquiries();
+        closeAdmin();
+        hideAdminAuth();
+        showToast("All saved website data has been reset.");
+      }
+
+      function isAdminUnlocked(){
+        return sessionStorage.getItem(ADMIN_SESSION_KEY) === "1";
+      }
+
+      function updateAdminSessionState(){
+        const state = document.getElementById("adminSessionState");
+        if(state){
+          state.textContent = isAdminUnlocked() ? "Unlocked in this browser tab" : "Locked until login";
+        }
+      }
+
+      function showAdminAuth(){
+        document.getElementById("adminAuthModal").classList.add("show");
+        const input = document.getElementById("adminLoginPassword");
+        input.value = "";
+        setTimeout(()=>input.focus(), 30);
+      }
+
+      function hideAdminAuth(){
+        document.getElementById("adminAuthModal").classList.remove("show");
+        document.getElementById("adminLoginPassword").value = "";
+      }
+
+      function authenticateAdmin(){
+        const password = document.getElementById("adminLoginPassword").value;
+        if(password === adminSettings.password){
+          sessionStorage.setItem(ADMIN_SESSION_KEY, "1");
+          hideAdminAuth();
+          openAdmin(true);
+          showToast("Admin session unlocked.");
+          return;
+        }
+        showToast("Incorrect admin password.");
+      }
+
+      function lockAdminSession(){
+        sessionStorage.removeItem(ADMIN_SESSION_KEY);
+        updateAdminSessionState();
+        closeAdmin();
+        showToast("Admin session locked.");
+      }
+
+      function openAdmin(skipAuth){
+        if(!skipAuth && !isAdminUnlocked()){
+          showAdminAuth();
+          return;
+        }
+        applyBranding();
+        applyGalleryImages();
+        renderAdminInquiries();
+        updateAdminSessionState();
+        document.getElementById("adminPanel").classList.add("show");
+        document.getElementById("adminBackdrop").classList.add("show");
+      }
+
+      function closeAdmin(){
+        document.getElementById("adminPanel").classList.remove("show");
+        document.getElementById("adminBackdrop").classList.remove("show");
+      }
 
       function closeLightbox(){
         activeLightboxKey = null;
         document.getElementById("lightbox").classList.remove("active");
       }
+
+      function bindGalleryAdminTools(){
+        galleryKeys.forEach((key, index)=>{
+          const displayIndex = index + 1;
+          const uploadInput = document.getElementById(`adminGalleryFile${displayIndex}`);
+          const resetButton = document.getElementById(`resetGalleryImage${displayIndex}`);
+          if(uploadInput){
+            uploadInput.addEventListener("change", async function(){
+              const file = this.files && this.files[0];
+              if(!file) return;
+              if(!isAllowedImageFile(file)){
+                this.value = "";
+                setAdminGalleryStatus(displayIndex, "Invalid file. Use PNG or JPG/JPEG only.", true);
+                showToast("Only PNG and JPG/JPEG files are allowed.");
+                return;
+              }
+              await handleGalleryUpload(displayIndex, file);
+              this.value = "";
+            });
+          }
+          if(resetButton){
+            resetButton.addEventListener("click", ()=>resetGalleryImage(displayIndex));
+          }
+        });
+      }
+
+      function bindBrandingTools(){
+        const logoInput = document.getElementById("adminLogoFile");
+        const featuredInput = document.getElementById("adminFeaturedFile");
+        if(logoInput){
+          logoInput.addEventListener("change", async function(){
+            const file = this.files && this.files[0];
+            if(!file) return;
+            if(!isAllowedImageFile(file)){
+              this.value = "";
+              setBrandingStatus("logo", "Invalid file. Use PNG or JPG/JPEG only.", true);
+              showToast("Only PNG and JPG/JPEG files are allowed.");
+              return;
+            }
+            await handleBrandingUpload("logo", file);
+            this.value = "";
+          });
+        }
+        if(featuredInput){
+          featuredInput.addEventListener("change", async function(){
+            const file = this.files && this.files[0];
+            if(!file) return;
+            if(!isAllowedImageFile(file)){
+              this.value = "";
+              setBrandingStatus("featuredImage", "Invalid file. Use PNG or JPG/JPEG only.", true);
+              showToast("Only PNG and JPG/JPEG files are allowed.");
+              return;
+            }
+            await handleBrandingUpload("featuredImage", file);
+            this.value = "";
+          });
+        }
+        document.getElementById("resetLogoImage").addEventListener("click", ()=>resetBrandingImage("logo"));
+        document.getElementById("resetFeaturedImage").addEventListener("click", ()=>resetBrandingImage("featuredImage"));
+      }
+
+      function bindInquiryManager(){
+        document.getElementById("adminInquiryList").addEventListener("change", function(event){
+          const target = event.target;
+          if(target.matches('select[data-action="status"]')){
+            updateInquiryStatus(target.dataset.id, target.value);
+          }
+        });
+        document.getElementById("adminInquiryList").addEventListener("click", function(event){
+          const target = event.target;
+          if(target.matches('button[data-action="delete"]')){
+            const id = target.dataset.id;
+            if(confirm("Delete this inquiry?")){
+              deleteInquiry(id);
+            }
+          }
+        });
+        document.getElementById("exportInquiriesJson").addEventListener("click", exportInquiriesJson);
+        document.getElementById("exportInquiriesCsv").addEventListener("click", exportInquiriesCsv);
+      }
+
+      function bindBackupTools(){
+        const importInput = document.getElementById("importBackupInput");
+        document.getElementById("exportBackupBtn").addEventListener("click", exportFullBackup);
+        document.getElementById("importBackupBtn").addEventListener("click", ()=>importInput.click());
+        document.getElementById("resetAllDataBtn").addEventListener("click", ()=>{
+          if(confirm("Reset all saved content, inquiries, branding, gallery images, themes, and admin settings?")){
+            resetAllSavedData();
+          }
+        });
+        importInput.addEventListener("change", function(){
+          const file = this.files && this.files[0];
+          if(!file) return;
+          const reader = new FileReader();
+          reader.onload = ()=>{
+            try{
+              const payload = JSON.parse(reader.result);
+              applyBackupPayload(payload);
+            }catch(error){
+              showToast("Unable to import backup. Please use a valid JSON file.");
+            }finally{
+              importInput.value = "";
+            }
+          };
+          reader.onerror = ()=>{
+            showToast("Unable to read the backup file.");
+            importInput.value = "";
+          };
+          reader.readAsText(file);
+        });
+      }
+
+      function bindAdminSecurity(){
+        document.getElementById("lockAdminSession").addEventListener("click", lockAdminSession);
+        document.getElementById("lockAdminFromActions").addEventListener("click", lockAdminSession);
+        document.getElementById("adminLoginBtn").addEventListener("click", authenticateAdmin);
+        document.getElementById("adminAuthCancel").addEventListener("click", hideAdminAuth);
+        document.getElementById("adminLoginPassword").addEventListener("keydown", function(event){
+          if(event.key === "Enter"){
+            event.preventDefault();
+            authenticateAdmin();
+          }
+        });
+      }
+
+      document.getElementById("inquiryForm").addEventListener("submit", function(e){
+        e.preventDefault();
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData.entries());
+        if(!data.fullName || !data.phoneNumber || !data.emailField || !data.serviceSelect || !data.message){
+          showToast("Please complete all required fields.");
+          return;
+        }
+        const inquiry = {
+          id: nowId("inquiry"),
+          ...data,
+          date: new Date().toLocaleDateString(),
+          status: "New"
+        };
+        const items = getInquiries();
+        items.push(inquiry);
+        saveInquiries(items);
+        this.reset();
+        renderInquiries();
+        renderAdminInquiries();
+        showToast("Inquiry submitted successfully.");
+        openInquiryDraft(inquiry);
+      });
+
+      document.querySelectorAll(".gallery-item").forEach(item=>{
+        item.addEventListener("click", ()=>{
+          activeLightboxKey = item.dataset.galleryKey || null;
+          const lightboxImg = document.getElementById("lightboxImg");
+          lightboxImg.src = item.dataset.image;
+          lightboxImg.alt = content[activeLightboxKey] || item.querySelector("img")?.alt || "Gallery Preview";
+          document.getElementById("lightbox").classList.add("active");
+        });
+      });
 
       document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
       document.getElementById("lightbox").addEventListener("click", function(e){
@@ -2471,43 +3205,13 @@
           if(entry.isIntersecting) entry.target.classList.add("show");
         });
       }, {threshold:.12});
-
       document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 
-      function applyTheme(theme){
-        const validTheme = themes.includes(theme) ? theme : "blue-white";
-        document.body.setAttribute("data-theme", validTheme);
-        document.getElementById("themeSelect").value = validTheme;
-        localStorage.setItem(THEME_KEY, validTheme);
-      }
-
-      function cycleTheme(){
-        const current = document.body.getAttribute("data-theme") || "blue-white";
-        const currentIndex = themes.indexOf(current);
-        const nextTheme = themes[(currentIndex + 1) % themes.length];
-        applyTheme(nextTheme);
-        showToast("Theme changed to " + nextTheme.replace(/-/g, " "));
-      }
-
-      const savedTheme = localStorage.getItem(THEME_KEY) || "blue-white";
-      applyTheme(savedTheme);
-
+      applyTheme(getTheme());
       document.getElementById("themeSelect").addEventListener("change", function(){
         applyTheme(this.value);
       });
-
       document.getElementById("themeToggle").addEventListener("click", cycleTheme);
-
-      function openAdmin(){
-        applyGalleryImages();
-        document.getElementById("adminPanel").classList.add("show");
-        document.getElementById("adminBackdrop").classList.add("show");
-      }
-
-      function closeAdmin(){
-        document.getElementById("adminPanel").classList.remove("show");
-        document.getElementById("adminBackdrop").classList.remove("show");
-      }
 
       document.getElementById("closeAdmin").addEventListener("click", closeAdmin);
       document.getElementById("adminBackdrop").addEventListener("click", closeAdmin);
@@ -2520,6 +3224,7 @@
         if(e.key === "Escape"){
           closeAdmin();
           closeLightbox();
+          hideAdminAuth();
         }
       });
 
@@ -2546,7 +3251,6 @@
         content.sideEmail = content.email;
         content.sidePhones = `${content.phone1} | ${content.phone2}`;
         content.sideFacebook = content.facebook;
-
         content.footerBusinessName = content.businessName;
         content.footerAddress = content.location;
         content.footerEmail = content.email;
@@ -2554,19 +3258,26 @@
         content.footerPhone = content.phone1;
         content.footerPhoneTwo = content.phone2;
 
+        const newPassword = document.getElementById("adminNewPassword").value.trim();
+        if(newPassword){
+          adminSettings.password = newPassword;
+          persistAdminSettings();
+          document.getElementById("adminNewPassword").value = "";
+        }
+
         persistContent();
         applyContent();
-        showToast("Admin changes saved.");
+        renderInquiries();
+        renderAdminInquiries();
+        showToast(newPassword ? "Admin changes and password saved." : "Admin changes saved.");
       });
 
-      function toggleInlineEdit(){
-        editMode = !editMode;
+      function toggleInlineEdit(forceDisable){
+        editMode = forceDisable ? false : !editMode;
         editableNodes().forEach(node=>{
           node.contentEditable = editMode ? "true" : "false";
         });
-
         document.getElementById("toggleInlineEdit").textContent = editMode ? "Disable Edit Mode" : "Enable Edit Mode";
-
         if(!editMode){
           editableNodes().forEach(node=>{
             const key = node.dataset.key;
@@ -2580,22 +3291,32 @@
         }
       }
 
-      document.getElementById("toggleInlineEdit").addEventListener("click", toggleInlineEdit);
+      document.getElementById("toggleInlineEdit").addEventListener("click", ()=>toggleInlineEdit(false));
 
       document.getElementById("resetAdmin").addEventListener("click", ()=>{
-        if(!confirm("Reset all saved website content to default?")) return;
+        if(!confirm("Reset saved content, branding, and gallery images to default while keeping inquiries?")) return;
         localStorage.removeItem(CONTENT_KEY);
         localStorage.removeItem(GALLERY_IMAGES_KEY);
-        galleryImages = {};
+        localStorage.removeItem(BRANDING_KEY);
         content = {...defaults};
-        if(editMode) toggleInlineEdit();
+        galleryImages = {};
+        branding = {};
+        if(editMode) toggleInlineEdit(true);
         applyContent();
+        renderInquiries();
+        renderAdminInquiries();
         showToast("Website content reset.");
       });
 
       bindGalleryAdminTools();
+      bindBrandingTools();
+      bindInquiryManager();
+      bindBackupTools();
+      bindAdminSecurity();
       applyContent();
       renderInquiries();
+      renderAdminInquiries();
+      updateAdminSessionState();
     })();
   </script>
 </body>
