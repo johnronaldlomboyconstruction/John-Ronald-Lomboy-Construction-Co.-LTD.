@@ -1,0 +1,2047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>John Ronald Lomboy Construction Co. LTD.</title>
+  <meta name="description" content="Trusted Construction, Glass, Aluminum, Steel, and Roofing Solutions in Dasmariñas City, Cavite." />
+  <style>
+    :root{
+      --bg:#07111f;
+      --bg-2:#0d1b2d;
+      --surface:rgba(255,255,255,0.08);
+      --surface-2:rgba(255,255,255,0.12);
+      --surface-solid:#0f2239;
+      --text:#f7fbff;
+      --muted:#b8c7d9;
+      --line:rgba(255,255,255,0.12);
+      --primary:#ff9f1c;
+      --primary-2:#ffc15c;
+      --accent:#4da8ff;
+      --success:#22c55e;
+      --danger:#ef4444;
+      --shadow:0 18px 60px rgba(0,0,0,0.28);
+      --radius-xl:28px;
+      --radius-lg:22px;
+      --radius-md:16px;
+      --container:1200px;
+      --blur:blur(18px);
+    }
+
+    body.light{
+      --bg:#edf4fb;
+      --bg-2:#ffffff;
+      --surface:rgba(255,255,255,0.7);
+      --surface-2:rgba(255,255,255,0.86);
+      --surface-solid:#ffffff;
+      --text:#0f172a;
+      --muted:#4a5b72;
+      --line:rgba(15,23,42,0.09);
+      --primary:#e88a00;
+      --primary-2:#ffbf57;
+      --accent:#2563eb;
+      --success:#16a34a;
+      --danger:#dc2626;
+      --shadow:0 18px 60px rgba(15,23,42,0.08);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,Segoe UI,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(255,159,28,0.13), transparent 26%),
+        radial-gradient(circle at top left, rgba(77,168,255,0.14), transparent 20%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
+      min-height:100vh;
+      overflow-x:hidden;
+      transition:background .35s ease,color .35s ease;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    button,input,textarea,select{font:inherit}
+    .container{width:min(var(--container), calc(100% - 32px));margin-inline:auto}
+    .glass{
+      background:var(--surface);
+      border:1px solid var(--line);
+      backdrop-filter:var(--blur);
+      -webkit-backdrop-filter:var(--blur);
+      box-shadow:var(--shadow);
+    }
+
+    .section{padding:88px 0}
+    .section-top{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      margin-bottom:28px;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      width:max-content;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--surface);
+      color:var(--primary-2);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+    .section-title{
+      margin:0;
+      font-size:clamp(32px,5vw,52px);
+      line-height:1.02;
+      letter-spacing:-0.04em;
+    }
+    .section-desc{
+      margin:0;
+      max-width:760px;
+      color:var(--muted);
+      font-size:clamp(15px,2vw,18px);
+      line-height:1.7;
+    }
+
+    .nav-wrap{
+      position:sticky;
+      top:0;
+      z-index:999;
+      padding:14px 0;
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      background:linear-gradient(180deg, rgba(7,17,31,0.30), rgba(7,17,31,0));
+    }
+    body.light .nav-wrap{
+      background:linear-gradient(180deg, rgba(237,244,251,0.72), rgba(237,244,251,0));
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px 16px;
+      border-radius:22px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+    .brand-icon{
+      width:46px;height:46px;
+      border-radius:14px;
+      background:linear-gradient(135deg,var(--primary),var(--primary-2));
+      color:#111827;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      font-size:20px;
+      flex-shrink:0;
+    }
+    .brand-text{
+      min-width:0;
+    }
+    .brand-title{
+      margin:0;
+      font-size:15px;
+      font-weight:800;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand-sub{
+      margin:2px 0 0;
+      color:var(--muted);
+      font-size:12px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:4px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .nav-links a{
+      padding:10px 14px;
+      border-radius:12px;
+      color:var(--muted);
+      font-weight:600;
+      transition:.25s ease;
+    }
+    .nav-links a:hover{
+      color:var(--text);
+      background:var(--surface-2);
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-shrink:0;
+    }
+
+    .btn,.icon-btn{
+      border:none;
+      cursor:pointer;
+      transition:transform .22s ease, box-shadow .22s ease, background .22s ease, color .22s ease, border-color .22s ease;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 18px;
+      border-radius:14px;
+      font-weight:800;
+      letter-spacing:.01em;
+      background:linear-gradient(135deg,var(--primary),var(--primary-2));
+      color:#111827;
+      box-shadow:0 12px 28px rgba(255,159,28,0.24);
+    }
+    .btn:hover,.icon-btn:hover{transform:translateY(-2px)}
+    .btn.alt{
+      background:var(--surface-2);
+      color:var(--text);
+      border:1px solid var(--line);
+      box-shadow:none;
+    }
+    .btn.ghost{
+      background:transparent;
+      color:var(--text);
+      border:1px solid var(--line);
+      box-shadow:none;
+    }
+    .icon-btn{
+      width:46px;height:46px;
+      border-radius:14px;
+      background:var(--surface-2);
+      color:var(--text);
+      border:1px solid var(--line);
+      display:grid;
+      place-items:center;
+      box-shadow:none;
+    }
+
+    .hero{
+      padding:34px 0 36px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.18fr .82fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .hero-main{
+      position:relative;
+      overflow:hidden;
+      border-radius:var(--radius-xl);
+      padding:34px;
+      min-height:680px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      isolation:isolate;
+    }
+    .hero-main::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-1;
+      background:
+        linear-gradient(135deg, rgba(255,159,28,0.12), transparent 36%),
+        radial-gradient(circle at 80% 10%, rgba(77,168,255,0.18), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    }
+    .hero-title{
+      margin:18px 0 14px;
+      font-size:clamp(42px,7vw,82px);
+      line-height:.95;
+      letter-spacing:-.05em;
+      max-width:920px;
+    }
+    .hero-subtitle{
+      margin:0 0 24px;
+      max-width:760px;
+      font-size:clamp(16px,2.2vw,20px);
+      color:var(--muted);
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:26px;
+    }
+    .hero-badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:24px;
+    }
+    .hero-badge{
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.06);
+      color:var(--text);
+      font-weight:700;
+      font-size:13px;
+    }
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:auto;
+    }
+    .hero-stat{
+      padding:18px;
+      border-radius:20px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid var(--line);
+    }
+    .hero-stat strong{
+      display:block;
+      font-size:26px;
+      line-height:1;
+      margin-bottom:8px;
+      color:var(--primary-2);
+    }
+    .hero-stat span{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .hero-side{
+      display:grid;
+      grid-template-rows:1fr auto;
+      gap:18px;
+    }
+    .hero-media{
+      position:relative;
+      overflow:hidden;
+      border-radius:var(--radius-xl);
+      min-height:430px;
+      padding:18px;
+    }
+    .hero-media-card{
+      position:relative;
+      width:100%;
+      height:100%;
+      min-height:390px;
+      border-radius:24px;
+      overflow:hidden;
+      background:
+        linear-gradient(180deg, rgba(12,18,28,0.10), rgba(12,18,28,0.45)),
+        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    }
+    .hero-project{
+      position:absolute;
+      left:20px;
+      right:20px;
+      bottom:20px;
+      padding:18px;
+      border-radius:20px;
+    }
+    .hero-project small{
+      color:var(--primary-2);
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.1em;
+    }
+    .hero-project h3{
+      margin:8px 0 8px;
+      font-size:22px;
+      line-height:1.15;
+    }
+    .hero-project p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .hero-contact{
+      padding:22px;
+      border-radius:var(--radius-xl);
+      display:grid;
+      gap:14px;
+    }
+    .contact-row{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+    }
+    .contact-icon{
+      width:44px;height:44px;
+      border-radius:14px;
+      background:linear-gradient(135deg,var(--accent),#8ec8ff);
+      color:white;
+      display:grid;
+      place-items:center;
+      font-size:18px;
+      flex-shrink:0;
+    }
+    .contact-row h4{
+      margin:0 0 4px;
+      font-size:15px;
+    }
+    .contact-row p,.contact-row a{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+    }
+
+    .card{
+      padding:24px;
+      border-radius:var(--radius-lg);
+      position:relative;
+      overflow:hidden;
+    }
+    .card h3{
+      margin:0 0 12px;
+      font-size:24px;
+      letter-spacing:-.03em;
+    }
+    .card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.75;
+    }
+
+    .mission-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:16px;
+    }
+    .mini-card{
+      padding:18px;
+      border-radius:18px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid var(--line);
+    }
+    .mini-card h4{
+      margin:0 0 10px;
+      font-size:18px;
+      color:var(--primary-2);
+    }
+    .mini-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .service-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+    .service-card{
+      padding:22px;
+      border-radius:24px;
+      transition:transform .25s ease,border-color .25s ease;
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      min-height:100%;
+    }
+    .service-card:hover{transform:translateY(-6px)}
+    .service-top{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    .service-icon{
+      width:54px;height:54px;
+      border-radius:16px;
+      background:linear-gradient(135deg,var(--primary),var(--primary-2));
+      color:#111827;
+      display:grid;
+      place-items:center;
+      font-size:24px;
+      font-weight:900;
+      flex-shrink:0;
+      box-shadow:0 12px 24px rgba(255,159,28,.22);
+    }
+    .service-title{
+      margin:0;
+      font-size:22px;
+      letter-spacing:-.03em;
+    }
+    .service-list{
+      display:grid;
+      gap:8px;
+      margin:0;
+      padding:0;
+      list-style:none;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .service-list li{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      line-height:1.6;
+    }
+    .check{
+      color:var(--success);
+      font-weight:900;
+      flex-shrink:0;
+    }
+
+    .featured-banner{
+      margin-top:22px;
+      padding:22px;
+      border-radius:24px;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:22px;
+      align-items:center;
+    }
+    .featured-banner h3{
+      margin:0 0 10px;
+      font-size:28px;
+      line-height:1.1;
+      letter-spacing:-.03em;
+    }
+    .featured-banner p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+    }
+    .featured-image{
+      min-height:280px;
+      border-radius:22px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.32)),
+        url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      position:relative;
+      overflow:hidden;
+    }
+    .featured-tag{
+      position:absolute;
+      left:16px;
+      bottom:16px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.2);
+      color:white;
+      font-size:13px;
+      font-weight:800;
+      border:1px solid rgba(255,255,255,0.18);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr .8fr;
+      grid-auto-rows:230px;
+      gap:16px;
+    }
+    .gallery-item{
+      position:relative;
+      border-radius:24px;
+      overflow:hidden;
+      cursor:pointer;
+      box-shadow:var(--shadow);
+      border:1px solid var(--line);
+      isolation:isolate;
+    }
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .45s ease, filter .45s ease;
+    }
+    .gallery-item:hover img{
+      transform:scale(1.06);
+      filter:saturate(1.1);
+    }
+    .gallery-item::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, transparent 35%, rgba(0,0,0,0.68));
+      z-index:1;
+    }
+    .gallery-item:first-child{
+      grid-row:span 2;
+    }
+    .gallery-label{
+      position:absolute;
+      left:16px;
+      right:16px;
+      bottom:16px;
+      z-index:2;
+      color:white;
+      font-size:17px;
+      font-weight:800;
+      letter-spacing:-.02em;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr .95fr;
+      gap:22px;
+      align-items:start;
+    }
+    .form-card,.side-card{
+      padding:24px;
+      border-radius:24px;
+    }
+    .fields{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      margin-bottom:14px;
+    }
+    .field label{
+      font-size:14px;
+      font-weight:700;
+    }
+    .field input,.field textarea,.field select{
+      width:100%;
+      padding:14px 15px;
+      border-radius:15px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.05);
+      color:var(--text);
+      outline:none;
+      transition:border-color .22s ease, transform .22s ease, background .22s ease;
+    }
+    .field input:focus,.field textarea:focus,.field select:focus{
+      border-color:var(--accent);
+      transform:translateY(-1px);
+      background:rgba(255,255,255,0.08);
+    }
+    .field textarea{
+      min-height:140px;
+      resize:vertical;
+    }
+    .estimate{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      width:max-content;
+      padding:10px 14px;
+      border-radius:999px;
+      color:#0b1f12;
+      background:linear-gradient(135deg,#86efac,#22c55e);
+      font-weight:800;
+      font-size:13px;
+      margin-bottom:14px;
+    }
+    .side-points{
+      display:grid;
+      gap:12px;
+      margin:18px 0 18px;
+    }
+    .side-point{
+      padding:14px;
+      border-radius:16px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid var(--line);
+    }
+    .side-point strong{
+      display:block;
+      margin-bottom:4px;
+      font-size:15px;
+    }
+    .side-point span{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+    }
+    .inquiry-list{
+      display:grid;
+      gap:10px;
+      margin-top:14px;
+    }
+    .inquiry-item{
+      padding:14px;
+      border-radius:16px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .inquiry-item h4{
+      margin:0 0 6px;
+      font-size:15px;
+    }
+    .inquiry-item p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.6;
+    }
+    .inquiry-date{
+      padding:7px 10px;
+      border-radius:999px;
+      background:rgba(34,197,94,0.16);
+      color:#86efac;
+      font-size:12px;
+      font-weight:800;
+      white-space:nowrap;
+      border:1px solid rgba(34,197,94,0.24);
+    }
+
+    .testimonial-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+    .testimonial{
+      padding:22px;
+      border-radius:22px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .stars{
+      color:#ffd166;
+      letter-spacing:3px;
+      font-size:18px;
+    }
+    .testimonial p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.75;
+    }
+    .person{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-top:auto;
+    }
+    .avatar{
+      width:48px;height:48px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,var(--accent),#8ec8ff);
+      color:white;
+      font-weight:900;
+    }
+    .person strong{
+      display:block;
+      font-size:15px;
+    }
+    .person span{
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .faq-list{
+      display:grid;
+      gap:14px;
+    }
+    .faq-item{
+      border-radius:20px;
+      overflow:hidden;
+    }
+    .faq-btn{
+      width:100%;
+      background:transparent;
+      border:none;
+      text-align:left;
+      padding:18px 20px;
+      color:var(--text);
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:center;
+      cursor:pointer;
+      font-weight:800;
+      font-size:16px;
+    }
+    .faq-plus{
+      width:34px;height:34px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,0.07);
+      border:1px solid var(--line);
+      flex-shrink:0;
+      font-size:18px;
+    }
+    .faq-content{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .32s ease;
+      padding:0 20px;
+    }
+    .faq-content p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      padding-bottom:18px;
+    }
+    .faq-item.active .faq-content{
+      max-height:220px;
+    }
+
+    .footer{
+      padding:40px 0 60px;
+    }
+    .footer-box{
+      padding:28px;
+      border-radius:28px;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:22px;
+      align-items:start;
+    }
+    .footer-box h3{
+      margin:0 0 12px;
+      font-size:34px;
+      line-height:1.05;
+      letter-spacing:-.04em;
+    }
+    .footer-box p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.75;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+    .footer-block h4{
+      margin:0 0 10px;
+      font-size:16px;
+    }
+    .footer-block a,.footer-block div{
+      display:block;
+      color:var(--muted);
+      margin:8px 0;
+      line-height:1.6;
+      font-size:14px;
+    }
+
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.84);
+      display:none;
+      place-items:center;
+      z-index:1200;
+      padding:24px;
+    }
+    .lightbox.active{display:grid}
+    .lightbox-inner{
+      position:relative;
+      width:min(1040px,100%);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 30px 80px rgba(0,0,0,0.45);
+      background:#000;
+    }
+    .lightbox img{
+      width:100%;
+      max-height:82vh;
+      object-fit:cover;
+    }
+    .lightbox-close{
+      position:absolute;
+      top:14px;
+      right:14px;
+      width:44px;height:44px;
+      border-radius:14px;
+      background:rgba(255,255,255,0.16);
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.18);
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      z-index:3;
+      font-size:18px;
+    }
+
+    .toast-wrap{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:1500;
+      display:grid;
+      gap:10px;
+      width:min(360px, calc(100% - 24px));
+    }
+    .toast{
+      padding:14px 16px;
+      border-radius:18px;
+      background:var(--surface-solid);
+      color:var(--text);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      transform:translateY(16px);
+      opacity:0;
+      animation:toastIn .28s ease forwards;
+    }
+    @keyframes toastIn{
+      to{transform:translateY(0);opacity:1}
+    }
+
+    .admin-hint{
+      position:fixed;
+      left:16px;
+      bottom:16px;
+      z-index:1100;
+      padding:11px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--surface);
+      color:var(--text);
+      box-shadow:var(--shadow);
+      cursor:pointer;
+      opacity:.18;
+      transition:.22s ease;
+      user-select:none;
+      font-weight:700;
+    }
+    .admin-hint:hover{opacity:1}
+
+    .admin-backdrop{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.55);
+      display:none;
+      z-index:1300;
+    }
+    .admin-backdrop.show{display:block}
+
+    .admin-panel{
+      position:fixed;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      width:min(900px, calc(100% - 24px));
+      max-height:88vh;
+      overflow:auto;
+      padding:22px;
+      border-radius:26px;
+      z-index:1400;
+      display:none;
+    }
+    .admin-panel.show{display:block}
+    .admin-header{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:flex-start;
+      margin-bottom:18px;
+    }
+    .admin-header h3{
+      margin:0 0 6px;
+      font-size:26px;
+    }
+    .admin-header p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .admin-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .admin-grid .field.full{
+      grid-column:1/-1;
+    }
+    .admin-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:10px;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(24px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+    .reveal.show{
+      opacity:1;
+      transform:none;
+    }
+
+    [contenteditable="true"]{
+      outline:2px dashed rgba(255,193,92,.55);
+      outline-offset:5px;
+      border-radius:8px;
+    }
+
+    @media (max-width:1100px){
+      .hero-grid,.grid-2,.contact-grid,.footer-box,.featured-banner{
+        grid-template-columns:1fr;
+      }
+      .service-grid,.testimonial-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+      .gallery-grid{
+        grid-template-columns:1fr 1fr;
+      }
+      .gallery-item:first-child{
+        grid-row:span 1;
+        grid-column:1/-1;
+      }
+      .nav{
+        flex-wrap:wrap;
+      }
+      .nav-links{
+        order:3;
+        width:100%;
+        justify-content:flex-start;
+      }
+    }
+
+    @media (max-width:760px){
+      .section{padding:70px 0}
+      .hero-main{padding:24px;min-height:auto}
+      .hero-title{font-size:clamp(38px,11vw,58px)}
+      .hero-actions,.hero-badges{flex-direction:column;align-items:stretch}
+      .btn{width:100%}
+      .hero-stats,.service-grid,.testimonial-grid,.gallery-grid,.fields,.mission-grid,.footer-grid,.admin-grid{
+        grid-template-columns:1fr;
+      }
+      .nav-links{
+        flex-wrap:nowrap;
+        overflow:auto;
+        width:100%;
+      }
+      .nav-links a{white-space:nowrap}
+      .brand-title{font-size:14px}
+      .hero-contact{padding:18px}
+      .admin-grid .field.full{grid-column:auto}
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-wrap">
+    <div class="container">
+      <nav class="nav glass reveal">
+        <div class="brand">
+          <div class="brand-icon" id="brandIcon">J</div>
+          <div class="brand-text">
+            <p class="brand-title editable" data-key="businessName">John Ronald Lomboy Construction Co. LTD.</p>
+            <p class="brand-sub editable" data-key="industryShort">Construction • Glass • Aluminum • Steel • Roofing</p>
+          </div>
+        </div>
+
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#project">Project</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#inquiry">Inquiry</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">☀</button>
+          <a href="#inquiry" class="btn editable-link" data-key="heroBtn1">Message Us Now</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-main glass reveal">
+            <div class="eyebrow">Trusted Professionals • Cavite Based</div>
+            <h1 class="hero-title editable" data-key="heroTitle">Trusted Construction, Glass, Aluminum, Steel, and Roofing Solutions</h1>
+            <p class="hero-subtitle editable" data-key="heroSubtitle">Upgrade your home or business with modern, sleek, durable, and space-saving workmanship by trusted professionals.</p>
+
+            <div class="hero-actions">
+              <a href="#inquiry" class="btn editable-link" data-key="heroBtn1Alt">Message Us Now</a>
+              <a href="#inquiry" class="btn alt editable-link" data-key="heroBtn2">Get Free Estimate</a>
+            </div>
+
+            <div class="hero-badges">
+              <div class="hero-badge">Architectural & Engineering Design</div>
+              <div class="hero-badge">Glass & Aluminum Works</div>
+              <div class="hero-badge">Roofing & Fabrication</div>
+            </div>
+
+            <div class="hero-stats">
+              <div class="hero-stat">
+                <strong>5+</strong>
+                <span>Major service categories under one trusted company</span>
+              </div>
+              <div class="hero-stat">
+                <strong>100%</strong>
+                <span>Committed to style, durability, and functionality</span>
+              </div>
+              <div class="hero-stat">
+                <strong>Free</strong>
+                <span>Estimate support for residential and commercial clients</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-side">
+            <div class="hero-media glass reveal">
+              <div class="hero-media-card">
+                <div class="hero-project glass">
+                  <small>Featured Completed Project</small>
+                  <h3 class="editable" data-key="featuredProjectTitle">Aluminum Wardrobe Cabinet with Sliding Door Mirror Glass</h3>
+                  <p class="editable" data-key="featuredProjectText">Supply and installation of Aluminum Wardrobe Cabinet with sliding door mirror glass and built-in drawers — designed for style, durability, and space-saving functionality.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-contact glass reveal">
+              <div class="contact-row">
+                <div class="contact-icon">📍</div>
+                <div>
+                  <h4>Visit Us</h4>
+                  <p class="editable" data-key="location">B6 L1 California Extension North 1, San Marino, Brgy. Salawag, Dasmariñas City, Cavite</p>
+                </div>
+              </div>
+              <div class="contact-row">
+                <div class="contact-icon">☎</div>
+                <div>
+                  <h4>Contact Numbers</h4>
+                  <p class="editable" data-key="phone1">Ronald Lomboy: 0999-7290-460 / 0945-7395-885</p>
+                  <p class="editable" data-key="phone2">John Ronald Lomboy: 0970-3269-291</p>
+                </div>
+              </div>
+              <div class="contact-row">
+                <div class="contact-icon">✉</div>
+                <div>
+                  <h4>Email & Facebook</h4>
+                  <p class="editable" data-key="email">JRLomboyConstruction@gmail.com</p>
+                  <p class="editable" data-key="facebook">John Ronald Lomboy Construction Co. LTD.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-top reveal">
+          <div class="eyebrow">About The Company</div>
+          <h2 class="section-title">Crafting Durable Spaces with Quality Workmanship</h2>
+          <p class="section-desc">John Ronald Lomboy Construction Co. LTD. provides professional design, construction, glass, aluminum, steel, stainless, roofing, and roll-up works. We are committed to style, durability, functionality, and high-quality workmanship for residential and commercial projects.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card glass reveal">
+            <h3 class="editable" data-key="aboutTitle">Professional Design, Construction, and Fabrication Solutions</h3>
+            <p class="editable" data-key="aboutText">From architectural design to renovation, aluminum cabinets, glass works, steel fabrication, roofing installation, and roll-up works, our company handles each project with precision, honest service, and attention to detail. We focus on creating results that are modern, long-lasting, and built around our clients’ needs.</p>
+          </div>
+
+          <div class="card glass reveal">
+            <h3>Mission & Vision</h3>
+            <div class="mission-grid">
+              <div class="mini-card">
+                <h4>Mission</h4>
+                <p class="editable" data-key="missionText">To deliver strong, stylish, and long-lasting construction and fabrication solutions with honest service and quality workmanship.</p>
+              </div>
+              <div class="mini-card">
+                <h4>Vision</h4>
+                <p class="editable" data-key="visionText">To become one of the most trusted names in construction and fabrication services in Cavite and nearby areas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-top reveal">
+          <div class="eyebrow">Our Services</div>
+          <h2 class="section-title">Complete Construction and Fabrication Services</h2>
+          <p class="section-desc">Our company offers a wide range of professional services for homes, businesses, and project sites — combining quality materials, skilled workmanship, and dependable service.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card glass reveal">
+            <div class="service-top">
+              <div class="service-icon">🏗</div>
+              <h3 class="service-title editable" data-key="service1Title">Design & Construction Works</h3>
+            </div>
+            <ul class="service-list editable-list" data-key="service1List">
+              <li><span class="check">✅</span><span>Architectural & Engineering Design</span></li>
+              <li><span class="check">✅</span><span>Renovation</span></li>
+              <li><span class="check">✅</span><span>New Construction</span></li>
+            </ul>
+          </article>
+
+          <article class="service-card glass reveal">
+            <div class="service-top">
+              <div class="service-icon">🪟</div>
+              <h3 class="service-title editable" data-key="service2Title">Glass & Aluminum Works</h3>
+            </div>
+            <ul class="service-list editable-list" data-key="service2List">
+              <li><span class="check">✅</span><span>Sliding Windows & Doors</span></li>
+              <li><span class="check">✅</span><span>Screen Windows & Doors</span></li>
+              <li><span class="check">✅</span><span>Awning & Casement Windows</span></li>
+              <li><span class="check">✅</span><span>Kitchen Hanging & Modular Cabinets</span></li>
+              <li><span class="check">✅</span><span>Aluminum Wardrobe Cabinet</span></li>
+              <li><span class="check">✅</span><span>Glass Railings</span></li>
+              <li><span class="check">✅</span><span>Patch Doors</span></li>
+              <li><span class="check">✅</span><span>Store Front</span></li>
+            </ul>
+          </article>
+
+          <article class="service-card glass reveal">
+            <div class="service-top">
+              <div class="service-icon">🔩</div>
+              <h3 class="service-title editable" data-key="service3Title">Steel & Stainless Works</h3>
+            </div>
+            <ul class="service-list editable-list" data-key="service3List">
+              <li><span class="check">✅</span><span>Sliding Gate / Swing Gate</span></li>
+              <li><span class="check">✅</span><span>Window Grills</span></li>
+              <li><span class="check">✅</span><span>Dog Cage</span></li>
+              <li><span class="check">✅</span><span>Kitchen Cabinets & Tables</span></li>
+              <li><span class="check">✅</span><span>Roofing Framing</span></li>
+            </ul>
+          </article>
+
+          <article class="service-card glass reveal">
+            <div class="service-top">
+              <div class="service-icon">🏠</div>
+              <h3 class="service-title editable" data-key="service4Title">Roofing Works</h3>
+            </div>
+            <ul class="service-list editable-list" data-key="service4List">
+              <li><span class="check">✅</span><span>Roofing Installation</span></li>
+              <li><span class="check">✅</span><span>Gutter Installation</span></li>
+              <li><span class="check">✅</span><span>Trusses Fabrication & Installation</span></li>
+            </ul>
+          </article>
+
+          <article class="service-card glass reveal">
+            <div class="service-top">
+              <div class="service-icon">🚪</div>
+              <h3 class="service-title editable" data-key="service5Title">Roll-up Works</h3>
+            </div>
+            <ul class="service-list editable-list" data-key="service5List">
+              <li><span class="check">✅</span><span>Fabrication & Installation</span></li>
+            </ul>
+          </article>
+
+          <article class="service-card glass reveal">
+            <div class="service-top">
+              <div class="service-icon">💯</div>
+              <h3 class="service-title editable" data-key="service6Title">Why Clients Choose Us</h3>
+            </div>
+            <ul class="service-list editable-list" data-key="service6List">
+              <li><span class="check">✅</span><span>Trusted professionals with quality workmanship</span></li>
+              <li><span class="check">✅</span><span>Modern, sleek, and durable finishes</span></li>
+              <li><span class="check">✅</span><span>Residential and commercial project support</span></li>
+              <li><span class="check">✅</span><span>Free estimates for inquiries</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="project">
+      <div class="container">
+        <div class="section-top reveal">
+          <div class="eyebrow">Quality Project Completed</div>
+          <h2 class="section-title">Featured Work That Combines Style and Functionality</h2>
+          <p class="section-desc">A highlighted project section that showcases the quality, finish, and design standards our company delivers.</p>
+        </div>
+
+        <div class="featured-banner glass reveal">
+          <div>
+            <h3 class="editable" data-key="projectHeadline">Supply and Installation of Aluminum Wardrobe Cabinet with Sliding Door Mirror Glass</h3>
+            <p class="editable" data-key="projectDescription">Designed with built-in drawers for style, durability, and space-saving functionality, this completed wardrobe cabinet project reflects our commitment to sleek finishes, smart storage solutions, and long-lasting craftsmanship.</p>
+          </div>
+          <div class="featured-image">
+            <div class="featured-tag">Modern • Sleek • Long-Lasting</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-top reveal">
+          <div class="eyebrow">Project Gallery</div>
+          <h2 class="section-title">Construction, Aluminum, Roofing, and Fabrication Highlights</h2>
+          <p class="section-desc">Explore sample visual highlights inspired by our service categories and project style.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item reveal" data-image="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80" alt="Aluminum Wardrobe Cabinet" />
+            <div class="gallery-label editable" data-key="gallery1">Aluminum Wardrobe Cabinet</div>
+          </div>
+
+          <div class="gallery-item reveal" data-image="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=80" alt="Sliding Windows" />
+            <div class="gallery-label editable" data-key="gallery2">Sliding Windows</div>
+          </div>
+
+          <div class="gallery-item reveal" data-image="https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&w=1200&q=80" alt="Roofing Installation" />
+            <div class="gallery-label editable" data-key="gallery3">Roofing Installation</div>
+          </div>
+
+          <div class="gallery-item reveal" data-image="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80" alt="Modular Cabinets" />
+            <div class="gallery-label editable" data-key="gallery4">Modular Cabinets</div>
+          </div>
+
+          <div class="gallery-item reveal" data-image="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80" alt="Steel Fabrication" />
+            <div class="gallery-label editable" data-key="gallery5">Steel Fabrication</div>
+          </div>
+
+          <div class="gallery-item reveal" data-image="https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1200&q=80" alt="Store Front Installation" />
+            <div class="gallery-label editable" data-key="gallery6">Store Front Installation</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="inquiry">
+      <div class="container">
+        <div class="section-top reveal">
+          <div class="eyebrow">Inquiry & Booking</div>
+          <h2 class="section-title">Message Us for Inquiries and Free Estimates</h2>
+          <p class="section-desc">Send your project details and we’ll help you get started with the right service solution for your needs.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="form-card glass reveal">
+            <div class="estimate">✅ Free Estimate Available</div>
+            <form id="inquiryForm">
+              <div class="fields">
+                <div class="field">
+                  <label for="fullName">Full Name</label>
+                  <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required />
+                </div>
+                <div class="field">
+                  <label for="phoneNumber">Phone Number</label>
+                  <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter your contact number" required />
+                </div>
+              </div>
+
+              <div class="fields">
+                <div class="field">
+                  <label for="emailField">Email</label>
+                  <input type="email" id="emailField" name="emailField" placeholder="Enter your email" required />
+                </div>
+                <div class="field">
+                  <label for="serviceSelect">Service Needed</label>
+                  <select id="serviceSelect" name="serviceSelect" required>
+                    <option value="">Select a service</option>
+                    <option>Architectural & Engineering Design</option>
+                    <option>Renovation</option>
+                    <option>New Construction</option>
+                    <option>Sliding Windows & Doors</option>
+                    <option>Screen Windows & Doors</option>
+                    <option>Awning & Casement Windows</option>
+                    <option>Kitchen Hanging & Modular Cabinets</option>
+                    <option>Aluminum Wardrobe Cabinet</option>
+                    <option>Glass Railings</option>
+                    <option>Patch Doors</option>
+                    <option>Store Front</option>
+                    <option>Sliding Gate / Swing Gate</option>
+                    <option>Window Grills</option>
+                    <option>Dog Cage</option>
+                    <option>Kitchen Cabinets & Tables</option>
+                    <option>Roofing Framing</option>
+                    <option>Roofing Installation</option>
+                    <option>Gutter Installation</option>
+                    <option>Trusses Fabrication & Installation</option>
+                    <option>Roll-up Fabrication & Installation</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell us about your project or inquiry" required></textarea>
+              </div>
+
+              <button type="submit" class="btn">Submit Inquiry</button>
+            </form>
+          </div>
+
+          <div class="side-card glass reveal">
+            <h3 style="margin:0 0 8px;font-size:28px;letter-spacing:-.03em;">Company Contact Details</h3>
+            <p style="margin:0;color:var(--muted);line-height:1.75;">We serve clients in Dasmariñas City, Cavite and nearby areas for residential and commercial projects.</p>
+
+            <div class="side-points">
+              <div class="side-point">
+                <strong>Business Name</strong>
+                <span class="editable" data-key="sideBusinessName">John Ronald Lomboy Construction Co. LTD.</span>
+              </div>
+              <div class="side-point">
+                <strong>Address</strong>
+                <span class="editable" data-key="sideAddress">B6 L1 California Extension North 1, San Marino, Brgy. Salawag, Dasmariñas City, Cavite</span>
+              </div>
+              <div class="side-point">
+                <strong>Email</strong>
+                <span class="editable" data-key="sideEmail">JRLomboyConstruction@gmail.com</span>
+              </div>
+              <div class="side-point">
+                <strong>Contact Numbers</strong>
+                <span class="editable" data-key="sidePhones">Ronald Lomboy: 0999-7290-460 / 0945-7395-885 | John Ronald Lomboy: 0970-3269-291</span>
+              </div>
+              <div class="side-point">
+                <strong>Facebook Page</strong>
+                <span class="editable" data-key="sideFacebook">John Ronald Lomboy Construction Co. LTD.</span>
+              </div>
+            </div>
+
+            <h4 style="margin:0 0 10px;">Recent Inquiries</h4>
+            <div class="inquiry-list" id="inquiryList">
+              <div class="inquiry-item">
+                <div>
+                  <h4>Inquiry storage ready</h4>
+                  <p>New submissions will appear here and will be saved using localStorage.</p>
+                </div>
+                <div class="inquiry-date">Demo</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section-top reveal">
+          <div class="eyebrow">Client Testimonials</div>
+          <h2 class="section-title">What Clients Appreciate About Our Work</h2>
+          <p class="section-desc">Professionalism, clean results, quality finishes, and dependable service are at the center of every project we complete.</p>
+        </div>
+
+        <div class="testimonial-grid">
+          <div class="testimonial glass reveal">
+            <div class="stars">★★★★★</div>
+            <p class="editable" data-key="review1">Very professional and easy to work with. The finished aluminum cabinet looked modern, clean, and durable. Highly recommended for anyone looking for quality workmanship.</p>
+            <div class="person">
+              <div class="avatar">M</div>
+              <div>
+                <strong class="editable" data-key="review1Name">Marianne C.</strong>
+                <span>Homeowner Client</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial glass reveal">
+            <div class="stars">★★★★★</div>
+            <p class="editable" data-key="review2">Their team handled our project professionally from inquiry to installation. The materials, finish, and overall workmanship were impressive.</p>
+            <div class="person">
+              <div class="avatar">R</div>
+              <div>
+                <strong class="editable" data-key="review2Name">Robert D.</strong>
+                <span>Commercial Client</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial glass reveal">
+            <div class="stars">★★★★★</div>
+            <p class="editable" data-key="review3">Responsive, skilled, and trustworthy. They explained the process clearly and delivered a result that was both stylish and long-lasting.</p>
+            <div class="person">
+              <div class="avatar">A</div>
+              <div>
+                <strong class="editable" data-key="review3Name">Angela P.</strong>
+                <span>Repeat Client</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-top reveal">
+          <div class="eyebrow">Frequently Asked Questions</div>
+          <h2 class="section-title">Answers to Common Client Questions</h2>
+          <p class="section-desc">Helpful information for clients planning their next construction, fabrication, aluminum, or roofing project.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item glass reveal">
+            <button class="faq-btn">
+              <span class="editable" data-key="faq1q">Do you offer free estimates?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-content">
+              <p class="editable" data-key="faq1a">Yes, we welcome inquiries and provide free estimates based on your project requirements and service needs.</p>
+            </div>
+          </div>
+
+          <div class="faq-item glass reveal">
+            <button class="faq-btn">
+              <span class="editable" data-key="faq2q">What areas do you serve?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-content">
+              <p class="editable" data-key="faq2a">We are based in Dasmariñas City, Cavite and accommodate projects in nearby areas depending on the scope of work.</p>
+            </div>
+          </div>
+
+          <div class="faq-item glass reveal">
+            <button class="faq-btn">
+              <span class="editable" data-key="faq3q">Do you accept residential and commercial projects?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-content">
+              <p class="editable" data-key="faq3a">Yes. We handle both residential and commercial project requirements for construction, renovation, glass and aluminum works, steel works, roofing, and fabrication services.</p>
+            </div>
+          </div>
+
+          <div class="faq-item glass reveal">
+            <button class="faq-btn">
+              <span class="editable" data-key="faq4q">What materials do you use?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-content">
+              <p class="editable" data-key="faq4a">We prioritize durable and quality materials appropriate for each project type, with workmanship focused on strength, functionality, and clean finishing.</p>
+            </div>
+          </div>
+
+          <div class="faq-item glass reveal">
+            <button class="faq-btn">
+              <span class="editable" data-key="faq5q">How can clients contact you?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-content">
+              <p class="editable" data-key="faq5a">You may contact us through our phone numbers, email, Facebook page, or by using the inquiry form on this website.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-box glass reveal">
+        <div>
+          <div class="eyebrow">Get In Touch</div>
+          <h3 class="editable" data-key="footerHeadline">Let’s Build Something Strong, Stylish, and Long-Lasting</h3>
+          <p class="editable" data-key="footerSummary">John Ronald Lomboy Construction Co. LTD. delivers trusted construction, glass, aluminum, steel, roofing, and roll-up services with professionalism, durability, and modern workmanship for residential and commercial projects.</p>
+        </div>
+
+        <div class="footer-grid">
+          <div class="footer-block">
+            <h4>Company Info</h4>
+            <div class="editable" data-key="footerBusinessName">John Ronald Lomboy Construction Co. LTD.</div>
+            <div class="editable" data-key="footerAddress">B6 L1 California Extension North 1, San Marino, Brgy. Salawag, Dasmariñas City, Cavite</div>
+            <div class="editable" data-key="footerEmail">JRLomboyConstruction@gmail.com</div>
+            <div class="editable" data-key="footerFacebook">John Ronald Lomboy Construction Co. LTD.</div>
+            <div class="editable" data-key="footerPhone">Ronald Lomboy: 0999-7290-460 / 0945-7395-885</div>
+            <div class="editable" data-key="footerPhoneTwo">John Ronald Lomboy: 0970-3269-291</div>
+          </div>
+
+          <div class="footer-block">
+            <h4>Quick Links</h4>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#project">Featured Project</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#inquiry">Inquiry</a>
+            <a href="#faq">FAQ</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">✕</button>
+      <img id="lightboxImg" src="" alt="Gallery Preview" />
+    </div>
+  </div>
+
+  <div class="toast-wrap" id="toastWrap"></div>
+
+  <button class="admin-hint" id="adminHint" title="Triple click or press Ctrl + Shift + A">⚙ Admin</button>
+  <div class="admin-backdrop" id="adminBackdrop"></div>
+
+  <div class="admin-panel glass" id="adminPanel">
+    <div class="admin-header">
+      <div>
+        <h3>Hidden Admin Panel</h3>
+        <p>Edit hero text, about text, contact details, service titles, gallery labels, and footer details using localStorage.</p>
+      </div>
+      <button class="icon-btn" id="closeAdmin" aria-label="Close admin">✕</button>
+    </div>
+
+    <div class="admin-grid">
+      <div class="field">
+        <label for="adminBusinessName">Business Name</label>
+        <input id="adminBusinessName" type="text" />
+      </div>
+      <div class="field">
+        <label for="adminIndustryShort">Industry Short Text</label>
+        <input id="adminIndustryShort" type="text" />
+      </div>
+
+      <div class="field full">
+        <label for="adminHeroTitle">Hero Title</label>
+        <textarea id="adminHeroTitle"></textarea>
+      </div>
+
+      <div class="field full">
+        <label for="adminHeroSubtitle">Hero Subtitle</label>
+        <textarea id="adminHeroSubtitle"></textarea>
+      </div>
+
+      <div class="field full">
+        <label for="adminAboutText">About Text</label>
+        <textarea id="adminAboutText"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="adminLocation">Location</label>
+        <input id="adminLocation" type="text" />
+      </div>
+      <div class="field">
+        <label for="adminEmail">Email</label>
+        <input id="adminEmail" type="text" />
+      </div>
+      <div class="field">
+        <label for="adminPhone1">Phone 1</label>
+        <input id="adminPhone1" type="text" />
+      </div>
+      <div class="field">
+        <label for="adminPhone2">Phone 2</label>
+        <input id="adminPhone2" type="text" />
+      </div>
+      <div class="field full">
+        <label for="adminFacebook">Facebook Page</label>
+        <input id="adminFacebook" type="text" />
+      </div>
+
+      <div class="field">
+        <label for="adminGallery1">Gallery Label 1</label>
+        <input id="adminGallery1" type="text" />
+      </div>
+      <div class="field">
+        <label for="adminGallery2">Gallery Label 2</label>
+        <input id="adminGallery2" type="text" />
+      </div>
+      <div class="field">
+        <label for="adminGallery3">Gallery Label 3</label>
+        <input id="adminGallery3" type="text" />
+      </div>
+      <div class="field">
+        <label for="adminGallery4">Gallery Label 4</label>
+        <input id="adminGallery4" type="text" />
+      </div>
+      <div class="field">
+        <label for="adminGallery5">Gallery Label 5</label>
+        <input id="adminGallery5" type="text" />
+      </div>
+      <div class="field">
+        <label for="adminGallery6">Gallery Label 6</label>
+        <input id="adminGallery6" type="text" />
+      </div>
+    </div>
+
+    <div class="admin-actions">
+      <button class="btn" id="saveAdmin">Save Changes</button>
+      <button class="btn alt" id="toggleInlineEdit">Enable Edit Mode</button>
+      <button class="btn ghost" id="resetAdmin">Reset Content</button>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const CONTENT_KEY = "jrl_construction_site_content_v1";
+      const INQUIRIES_KEY = "jrl_construction_inquiries_v1";
+      const THEME_KEY = "jrl_construction_theme_v1";
+
+      const defaults = {
+        businessName: "John Ronald Lomboy Construction Co. LTD.",
+        industryShort: "Construction • Glass • Aluminum • Steel • Roofing",
+        heroTitle: "Trusted Construction, Glass, Aluminum, Steel, and Roofing Solutions",
+        heroSubtitle: "Upgrade your home or business with modern, sleek, durable, and space-saving workmanship by trusted professionals.",
+        heroBtn1: "Message Us Now",
+        heroBtn1Alt: "Message Us Now",
+        heroBtn2: "Get Free Estimate",
+        featuredProjectTitle: "Aluminum Wardrobe Cabinet with Sliding Door Mirror Glass",
+        featuredProjectText: "Supply and installation of Aluminum Wardrobe Cabinet with sliding door mirror glass and built-in drawers — designed for style, durability, and space-saving functionality.",
+        aboutTitle: "Professional Design, Construction, and Fabrication Solutions",
+        aboutText: "From architectural design to renovation, aluminum cabinets, glass works, steel fabrication, roofing installation, and roll-up works, our company handles each project with precision, honest service, and attention to detail. We focus on creating results that are modern, long-lasting, and built around our clients’ needs.",
+        missionText: "To deliver strong, stylish, and long-lasting construction and fabrication solutions with honest service and quality workmanship.",
+        visionText: "To become one of the most trusted names in construction and fabrication services in Cavite and nearby areas.",
+        location: "B6 L1 California Extension North 1, San Marino, Brgy. Salawag, Dasmariñas City, Cavite",
+        phone1: "Ronald Lomboy: 0999-7290-460 / 0945-7395-885",
+        phone2: "John Ronald Lomboy: 0970-3269-291",
+        email: "JRLomboyConstruction@gmail.com",
+        facebook: "John Ronald Lomboy Construction Co. LTD.",
+        projectHeadline: "Supply and Installation of Aluminum Wardrobe Cabinet with Sliding Door Mirror Glass",
+        projectDescription: "Designed with built-in drawers for style, durability, and space-saving functionality, this completed wardrobe cabinet project reflects our commitment to sleek finishes, smart storage solutions, and long-lasting craftsmanship.",
+        service1Title: "Design & Construction Works",
+        service2Title: "Glass & Aluminum Works",
+        service3Title: "Steel & Stainless Works",
+        service4Title: "Roofing Works",
+        service5Title: "Roll-up Works",
+        service6Title: "Why Clients Choose Us",
+        gallery1: "Aluminum Wardrobe Cabinet",
+        gallery2: "Sliding Windows",
+        gallery3: "Roofing Installation",
+        gallery4: "Modular Cabinets",
+        gallery5: "Steel Fabrication",
+        gallery6: "Store Front Installation",
+        sideBusinessName: "John Ronald Lomboy Construction Co. LTD.",
+        sideAddress: "B6 L1 California Extension North 1, San Marino, Brgy. Salawag, Dasmariñas City, Cavite",
+        sideEmail: "JRLomboyConstruction@gmail.com",
+        sidePhones: "Ronald Lomboy: 0999-7290-460 / 0945-7395-885 | John Ronald Lomboy: 0970-3269-291",
+        sideFacebook: "John Ronald Lomboy Construction Co. LTD.",
+        review1: "Very professional and easy to work with. The finished aluminum cabinet looked modern, clean, and durable. Highly recommended for anyone looking for quality workmanship.",
+        review1Name: "Marianne C.",
+        review2: "Their team handled our project professionally from inquiry to installation. The materials, finish, and overall workmanship were impressive.",
+        review2Name: "Robert D.",
+        review3: "Responsive, skilled, and trustworthy. They explained the process clearly and delivered a result that was both stylish and long-lasting.",
+        review3Name: "Angela P.",
+        faq1q: "Do you offer free estimates?",
+        faq1a: "Yes, we welcome inquiries and provide free estimates based on your project requirements and service needs.",
+        faq2q: "What areas do you serve?",
+        faq2a: "We are based in Dasmariñas City, Cavite and accommodate projects in nearby areas depending on the scope of work.",
+        faq3q: "Do you accept residential and commercial projects?",
+        faq3a: "Yes. We handle both residential and commercial project requirements for construction, renovation, glass and aluminum works, steel works, roofing, and fabrication services.",
+        faq4q: "What materials do you use?",
+        faq4a: "We prioritize durable and quality materials appropriate for each project type, with workmanship focused on strength, functionality, and clean finishing.",
+        faq5q: "How can clients contact you?",
+        faq5a: "You may contact us through our phone numbers, email, Facebook page, or by using the inquiry form on this website.",
+        footerHeadline: "Let’s Build Something Strong, Stylish, and Long-Lasting",
+        footerSummary: "John Ronald Lomboy Construction Co. LTD. delivers trusted construction, glass, aluminum, steel, roofing, and roll-up services with professionalism, durability, and modern workmanship for residential and commercial projects.",
+        footerBusinessName: "John Ronald Lomboy Construction Co. LTD.",
+        footerAddress: "B6 L1 California Extension North 1, San Marino, Brgy. Salawag, Dasmariñas City, Cavite",
+        footerEmail: "JRLomboyConstruction@gmail.com",
+        footerFacebook: "John Ronald Lomboy Construction Co. LTD.",
+        footerPhone: "Ronald Lomboy: 0999-7290-460 / 0945-7395-885",
+        footerPhoneTwo: "John Ronald Lomboy: 0970-3269-291"
+      };
+
+      function safeParse(value, fallback){
+        try{return JSON.parse(value)}catch(e){return fallback}
+      }
+
+      let content = {...defaults, ...safeParse(localStorage.getItem(CONTENT_KEY), {})};
+      let editMode = false;
+
+      const editableNodes = () => document.querySelectorAll(".editable");
+      const editableLinks = () => document.querySelectorAll(".editable-link");
+
+      function setText(selector, value){
+        const node = document.querySelector(selector);
+        if(node) node.textContent = value;
+      }
+
+      function applyContent(){
+        editableNodes().forEach(node=>{
+          const key = node.dataset.key;
+          if(key && content[key] !== undefined) node.textContent = content[key];
+        });
+
+        editableLinks().forEach(node=>{
+          const key = node.dataset.key;
+          if(key && content[key] !== undefined) node.textContent = content[key];
+        });
+
+        document.getElementById("brandIcon").textContent = (content.businessName || "J").trim().charAt(0).toUpperCase();
+
+        document.getElementById("adminBusinessName").value = content.businessName || "";
+        document.getElementById("adminIndustryShort").value = content.industryShort || "";
+        document.getElementById("adminHeroTitle").value = content.heroTitle || "";
+        document.getElementById("adminHeroSubtitle").value = content.heroSubtitle || "";
+        document.getElementById("adminAboutText").value = content.aboutText || "";
+        document.getElementById("adminLocation").value = content.location || "";
+        document.getElementById("adminEmail").value = content.email || "";
+        document.getElementById("adminPhone1").value = content.phone1 || "";
+        document.getElementById("adminPhone2").value = content.phone2 || "";
+        document.getElementById("adminFacebook").value = content.facebook || "";
+        document.getElementById("adminGallery1").value = content.gallery1 || "";
+        document.getElementById("adminGallery2").value = content.gallery2 || "";
+        document.getElementById("adminGallery3").value = content.gallery3 || "";
+        document.getElementById("adminGallery4").value = content.gallery4 || "";
+        document.getElementById("adminGallery5").value = content.gallery5 || "";
+        document.getElementById("adminGallery6").value = content.gallery6 || "";
+      }
+
+      function persistContent(){
+        localStorage.setItem(CONTENT_KEY, JSON.stringify(content));
+      }
+
+      function showToast(message){
+        const wrap = document.getElementById("toastWrap");
+        const toast = document.createElement("div");
+        toast.className = "toast";
+        toast.textContent = message;
+        wrap.appendChild(toast);
+
+        setTimeout(()=>{
+          toast.style.opacity = "0";
+          toast.style.transform = "translateY(16px)";
+          setTimeout(()=>toast.remove(), 260);
+        }, 2600);
+      }
+
+      function escapeHtml(str){
+        return String(str)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
+
+      function getInquiries(){
+        return safeParse(localStorage.getItem(INQUIRIES_KEY), []);
+      }
+
+      function saveInquiries(items){
+        localStorage.setItem(INQUIRIES_KEY, JSON.stringify(items));
+      }
+
+      function renderInquiries(){
+        const list = document.getElementById("inquiryList");
+        const items = getInquiries();
+
+        if(!items.length){
+          list.innerHTML = `
+            <div class="inquiry-item">
+              <div>
+                <h4>Inquiry storage ready</h4>
+                <p>New submissions will appear here and will be saved using localStorage.</p>
+              </div>
+              <div class="inquiry-date">Demo</div>
+            </div>
+          `;
+          return;
+        }
+
+        list.innerHTML = items.slice().reverse().slice(0,5).map(item => `
+          <div class="inquiry-item">
+            <div>
+              <h4>${escapeHtml(item.fullName)} • ${escapeHtml(item.serviceSelect)}</h4>
+              <p>${escapeHtml(item.phoneNumber)} • ${escapeHtml(item.emailField)}<br>${escapeHtml(item.message)}</p>
+            </div>
+            <div class="inquiry-date">${escapeHtml(item.date)}</div>
+          </div>
+        `).join("");
+      }
+
+      document.getElementById("inquiryForm").addEventListener("submit", function(e){
+        e.preventDefault();
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData.entries());
+
+        if(!data.fullName || !data.phoneNumber || !data.emailField || !data.serviceSelect || !data.message){
+          showToast("Please complete all required fields.");
+          return;
+        }
+
+        const items = getInquiries();
+        items.push({
+          ...data,
+          date: new Date().toLocaleDateString()
+        });
+        saveInquiries(items);
+        this.reset();
+        renderInquiries();
+        showToast("Inquiry submitted successfully.");
+      });
+
+      document.querySelectorAll(".gallery-item").forEach(item=>{
+        item.addEventListener("click", ()=>{
+          document.getElementById("lightboxImg").src = item.dataset.image;
+          document.getElementById("lightbox").classList.add("active");
+        });
+      });
+
+      function closeLightbox(){
+        document.getElementById("lightbox").classList.remove("active");
+      }
+
+      document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
+      document.getElementById("lightbox").addEventListener("click", function(e){
+        if(e.target.id === "lightbox") closeLightbox();
+      });
+
+      document.querySelectorAll(".faq-item").forEach(item=>{
+        const button = item.querySelector(".faq-btn");
+        button.addEventListener("click", ()=>{
+          item.classList.toggle("active");
+          item.querySelector(".faq-plus").textContent = item.classList.contains("active") ? "−" : "+";
+        });
+      });
+
+      const observer = new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting) entry.target.classList.add("show");
+        });
+      }, {threshold:.12});
+
+      document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+      function applyTheme(theme){
+        document.body.classList.toggle("light", theme === "light");
+        document.getElementById("themeToggle").textContent = theme === "light" ? "☾" : "☀";
+        localStorage.setItem(THEME_KEY, theme);
+      }
+
+      const savedTheme = localStorage.getItem(THEME_KEY) || "dark";
+      applyTheme(savedTheme);
+
+      document.getElementById("themeToggle").addEventListener("click", ()=>{
+        const next = document.body.classList.contains("light") ? "dark" : "light";
+        applyTheme(next);
+      });
+
+      function openAdmin(){
+        document.getElementById("adminPanel").classList.add("show");
+        document.getElementById("adminBackdrop").classList.add("show");
+      }
+
+      function closeAdmin(){
+        document.getElementById("adminPanel").classList.remove("show");
+        document.getElementById("adminBackdrop").classList.remove("show");
+      }
+
+      document.getElementById("closeAdmin").addEventListener("click", closeAdmin);
+      document.getElementById("adminBackdrop").addEventListener("click", closeAdmin);
+
+      let adminClicks = 0;
+      let clickReset = null;
+      document.getElementById("adminHint").addEventListener("click", ()=>{
+        adminClicks++;
+        clearTimeout(clickReset);
+        clickReset = setTimeout(()=>adminClicks = 0, 600);
+        if(adminClicks >= 3){
+          adminClicks = 0;
+          openAdmin();
+        }
+      });
+
+      window.addEventListener("keydown", (e)=>{
+        if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "a"){
+          e.preventDefault();
+          openAdmin();
+        }
+        if(e.key === "Escape"){
+          closeAdmin();
+          closeLightbox();
+        }
+      });
+
+      document.getElementById("saveAdmin").addEventListener("click", ()=>{
+        content.businessName = document.getElementById("adminBusinessName").value.trim() || defaults.businessName;
+        content.industryShort = document.getElementById("adminIndustryShort").value.trim() || defaults.industryShort;
+        content.heroTitle = document.getElementById("adminHeroTitle").value.trim() || defaults.heroTitle;
+        content.heroSubtitle = document.getElementById("adminHeroSubtitle").value.trim() || defaults.heroSubtitle;
+        content.aboutText = document.getElementById("adminAboutText").value.trim() || defaults.aboutText;
+        content.location = document.getElementById("adminLocation").value.trim() || defaults.location;
+        content.email = document.getElementById("adminEmail").value.trim() || defaults.email;
+        content.phone1 = document.getElementById("adminPhone1").value.trim() || defaults.phone1;
+        content.phone2 = document.getElementById("adminPhone2").value.trim() || defaults.phone2;
+        content.facebook = document.getElementById("adminFacebook").value.trim() || defaults.facebook;
+        content.gallery1 = document.getElementById("adminGallery1").value.trim() || defaults.gallery1;
+        content.gallery2 = document.getElementById("adminGallery2").value.trim() || defaults.gallery2;
+        content.gallery3 = document.getElementById("adminGallery3").value.trim() || defaults.gallery3;
+        content.gallery4 = document.getElementById("adminGallery4").value.trim() || defaults.gallery4;
+        content.gallery5 = document.getElementById("adminGallery5").value.trim() || defaults.gallery5;
+        content.gallery6 = document.getElementById("adminGallery6").value.trim() || defaults.gallery6;
+
+        content.sideBusinessName = content.businessName;
+        content.sideAddress = content.location;
+        content.sideEmail = content.email;
+        content.sidePhones = `${content.phone1} | ${content.phone2}`;
+        content.sideFacebook = content.facebook;
+
+        content.footerBusinessName = content.businessName;
+        content.footerAddress = content.location;
+        content.footerEmail = content.email;
+        content.footerFacebook = content.facebook;
+        content.footerPhone = content.phone1;
+        content.footerPhoneTwo = content.phone2;
+
+        persistContent();
+        applyContent();
+        showToast("Admin changes saved.");
+      });
+
+      function toggleInlineEdit(){
+        editMode = !editMode;
+        editableNodes().forEach(node=>{
+          node.contentEditable = editMode ? "true" : "false";
+        });
+
+        document.getElementById("toggleInlineEdit").textContent = editMode ? "Disable Edit Mode" : "Enable Edit Mode";
+
+        if(!editMode){
+          editableNodes().forEach(node=>{
+            const key = node.dataset.key;
+            if(key) content[key] = node.textContent.trim();
+          });
+          persistContent();
+          applyContent();
+          showToast("Inline content saved.");
+        }else{
+          showToast("Edit mode enabled.");
+        }
+      }
+
+      document.getElementById("toggleInlineEdit").addEventListener("click", toggleInlineEdit);
+
+      document.getElementById("resetAdmin").addEventListener("click", ()=>{
+        if(!confirm("Reset all saved website content to default?")) return;
+        localStorage.removeItem(CONTENT_KEY);
+        content = {...defaults};
+        if(editMode) toggleInlineEdit();
+        applyContent();
+        showToast("Website content reset.");
+      });
+
+      applyContent();
+      renderInquiries();
+    })();
+  </script>
+</body>
+</html>
