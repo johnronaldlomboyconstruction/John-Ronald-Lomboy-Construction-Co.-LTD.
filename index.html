@@ -1084,6 +1084,73 @@
       gap:10px;
       margin-top:10px;
     }
+    .admin-gallery-tools{
+      grid-column:1/-1;
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+      margin-top:4px;
+    }
+    .admin-gallery-card{
+      padding:16px;
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.05);
+      display:grid;
+      gap:12px;
+    }
+    .admin-gallery-preview-wrap{
+      position:relative;
+      overflow:hidden;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.05);
+      aspect-ratio:16/10;
+    }
+    .admin-gallery-preview{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .admin-gallery-status{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      width:max-content;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--surface-2);
+      color:var(--muted);
+      font-size:12px;
+      font-weight:800;
+    }
+    .admin-gallery-status[data-state="error"]{
+      color:var(--danger);
+      border-color:color-mix(in srgb, var(--danger) 35%, var(--line));
+    }
+    .admin-gallery-note{
+      margin:0;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.6;
+    }
+    .admin-gallery-card .field{
+      margin-bottom:0;
+    }
+    .admin-gallery-card input[type="file"]{
+      padding:12px;
+      cursor:pointer;
+    }
+    .admin-gallery-card-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .admin-gallery-card-actions .btn{
+      flex:1 1 180px;
+    }
 
     .reveal{
       opacity:0;
@@ -1135,7 +1202,7 @@
       .hero-title{font-size:clamp(38px,11vw,58px)}
       .hero-actions,.hero-badges{flex-direction:column;align-items:stretch}
       .btn{width:100%}
-      .hero-stats,.service-grid,.testimonial-grid,.gallery-grid,.fields,.mission-grid,.footer-grid,.admin-grid{
+      .hero-stats,.service-grid,.testimonial-grid,.gallery-grid,.fields,.mission-grid,.footer-grid,.admin-grid,.admin-gallery-tools{
         grid-template-columns:1fr;
       }
       .nav-links{
@@ -1733,7 +1800,7 @@
     <div class="admin-header">
       <div>
         <h3>Hidden Admin Panel</h3>
-        <p>Edit hero text, about text, contact details, gallery labels, and footer details using localStorage.</p>
+        <p>Edit hero text, about text, contact details, gallery labels, gallery images, and footer details using localStorage.</p>
       </div>
       <button class="icon-btn" id="closeAdmin" aria-label="Close admin">✕</button>
     </div>
@@ -1784,30 +1851,125 @@
         <input id="adminFacebook" type="text" />
       </div>
 
-      <div class="field">
-        <label for="adminGallery1">Gallery Label 1</label>
-        <input id="adminGallery1" type="text" />
+      <div class="field full">
+        <label>Gallery Labels & Image Uploads</label>
+        <div class="admin-gallery-tools">
+          <div class="admin-gallery-card">
+            <div class="admin-gallery-preview-wrap">
+              <img id="adminGalleryPreview1" class="admin-gallery-preview" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80" alt="Gallery 1 preview" />
+            </div>
+            <div class="admin-gallery-status" id="adminGalleryStatus1">Using default image</div>
+            <div class="field">
+              <label for="adminGallery1">Gallery Label 1</label>
+              <input id="adminGallery1" type="text" />
+            </div>
+            <div class="field">
+              <label for="adminGalleryFile1">Upload PNG or JPG/JPEG</label>
+              <input id="adminGalleryFile1" type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" />
+            </div>
+            <p class="admin-gallery-note">Upload a PNG or JPG/JPEG file to replace Gallery Image 1.</p>
+            <div class="admin-gallery-card-actions">
+              <button class="btn alt" type="button" id="resetGalleryImage1">Reset Image 1</button>
+            </div>
+          </div>
+
+          <div class="admin-gallery-card">
+            <div class="admin-gallery-preview-wrap">
+              <img id="adminGalleryPreview2" class="admin-gallery-preview" src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=80" alt="Gallery 2 preview" />
+            </div>
+            <div class="admin-gallery-status" id="adminGalleryStatus2">Using default image</div>
+            <div class="field">
+              <label for="adminGallery2">Gallery Label 2</label>
+              <input id="adminGallery2" type="text" />
+            </div>
+            <div class="field">
+              <label for="adminGalleryFile2">Upload PNG or JPG/JPEG</label>
+              <input id="adminGalleryFile2" type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" />
+            </div>
+            <p class="admin-gallery-note">Upload a PNG or JPG/JPEG file to replace Gallery Image 2.</p>
+            <div class="admin-gallery-card-actions">
+              <button class="btn alt" type="button" id="resetGalleryImage2">Reset Image 2</button>
+            </div>
+          </div>
+
+          <div class="admin-gallery-card">
+            <div class="admin-gallery-preview-wrap">
+              <img id="adminGalleryPreview3" class="admin-gallery-preview" src="https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&w=1200&q=80" alt="Gallery 3 preview" />
+            </div>
+            <div class="admin-gallery-status" id="adminGalleryStatus3">Using default image</div>
+            <div class="field">
+              <label for="adminGallery3">Gallery Label 3</label>
+              <input id="adminGallery3" type="text" />
+            </div>
+            <div class="field">
+              <label for="adminGalleryFile3">Upload PNG or JPG/JPEG</label>
+              <input id="adminGalleryFile3" type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" />
+            </div>
+            <p class="admin-gallery-note">Upload a PNG or JPG/JPEG file to replace Gallery Image 3.</p>
+            <div class="admin-gallery-card-actions">
+              <button class="btn alt" type="button" id="resetGalleryImage3">Reset Image 3</button>
+            </div>
+          </div>
+
+          <div class="admin-gallery-card">
+            <div class="admin-gallery-preview-wrap">
+              <img id="adminGalleryPreview4" class="admin-gallery-preview" src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80" alt="Gallery 4 preview" />
+            </div>
+            <div class="admin-gallery-status" id="adminGalleryStatus4">Using default image</div>
+            <div class="field">
+              <label for="adminGallery4">Gallery Label 4</label>
+              <input id="adminGallery4" type="text" />
+            </div>
+            <div class="field">
+              <label for="adminGalleryFile4">Upload PNG or JPG/JPEG</label>
+              <input id="adminGalleryFile4" type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" />
+            </div>
+            <p class="admin-gallery-note">Upload a PNG or JPG/JPEG file to replace Gallery Image 4.</p>
+            <div class="admin-gallery-card-actions">
+              <button class="btn alt" type="button" id="resetGalleryImage4">Reset Image 4</button>
+            </div>
+          </div>
+
+          <div class="admin-gallery-card">
+            <div class="admin-gallery-preview-wrap">
+              <img id="adminGalleryPreview5" class="admin-gallery-preview" src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80" alt="Gallery 5 preview" />
+            </div>
+            <div class="admin-gallery-status" id="adminGalleryStatus5">Using default image</div>
+            <div class="field">
+              <label for="adminGallery5">Gallery Label 5</label>
+              <input id="adminGallery5" type="text" />
+            </div>
+            <div class="field">
+              <label for="adminGalleryFile5">Upload PNG or JPG/JPEG</label>
+              <input id="adminGalleryFile5" type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" />
+            </div>
+            <p class="admin-gallery-note">Upload a PNG or JPG/JPEG file to replace Gallery Image 5.</p>
+            <div class="admin-gallery-card-actions">
+              <button class="btn alt" type="button" id="resetGalleryImage5">Reset Image 5</button>
+            </div>
+          </div>
+
+          <div class="admin-gallery-card">
+            <div class="admin-gallery-preview-wrap">
+              <img id="adminGalleryPreview6" class="admin-gallery-preview" src="https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1200&q=80" alt="Gallery 6 preview" />
+            </div>
+            <div class="admin-gallery-status" id="adminGalleryStatus6">Using default image</div>
+            <div class="field">
+              <label for="adminGallery6">Gallery Label 6</label>
+              <input id="adminGallery6" type="text" />
+            </div>
+            <div class="field">
+              <label for="adminGalleryFile6">Upload PNG or JPG/JPEG</label>
+              <input id="adminGalleryFile6" type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" />
+            </div>
+            <p class="admin-gallery-note">Upload a PNG or JPG/JPEG file to replace Gallery Image 6.</p>
+            <div class="admin-gallery-card-actions">
+              <button class="btn alt" type="button" id="resetGalleryImage6">Reset Image 6</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="field">
-        <label for="adminGallery2">Gallery Label 2</label>
-        <input id="adminGallery2" type="text" />
-      </div>
-      <div class="field">
-        <label for="adminGallery3">Gallery Label 3</label>
-        <input id="adminGallery3" type="text" />
-      </div>
-      <div class="field">
-        <label for="adminGallery4">Gallery Label 4</label>
-        <input id="adminGallery4" type="text" />
-      </div>
-      <div class="field">
-        <label for="adminGallery5">Gallery Label 5</label>
-        <input id="adminGallery5" type="text" />
-      </div>
-      <div class="field">
-        <label for="adminGallery6">Gallery Label 6</label>
-        <input id="adminGallery6" type="text" />
-      </div>
+
     </div>
 
     <div class="admin-actions">
@@ -1822,6 +1984,7 @@
       const CONTENT_KEY = "jrl_construction_site_content_v1";
       const INQUIRIES_KEY = "jrl_construction_inquiries_v1";
       const THEME_KEY = "jrl_construction_theme_v1";
+      const GALLERY_IMAGES_KEY = "jrl_construction_gallery_images_v1";
 
       const defaults = {
         businessName: "John Ronald Lomboy Construction Co. LTD.",
@@ -1902,6 +2065,41 @@
         try{return JSON.parse(value)}catch(e){return fallback}
       }
 
+      function sanitizeGalleryImages(images){
+        const cleaned = {};
+        if(images && typeof images === "object"){
+          Object.keys(images).forEach(key=>{
+            const value = images[key];
+            if(typeof value === "string" && value.startsWith("data:image/")){
+              cleaned[key] = value;
+            }
+          });
+        }
+        return cleaned;
+      }
+
+      const galleryKeys = Array.from({length: 6}, (_, index) => `gallery${index + 1}`);
+      const galleryItems = () => Array.from(document.querySelectorAll(".gallery-item"));
+      const defaultGalleryImages = galleryKeys.reduce((acc, key, index)=>{
+        const item = galleryItems()[index];
+        const imageEl = item ? item.querySelector("img") : null;
+        const source = (item && item.dataset.image) || (imageEl && imageEl.getAttribute("src")) || "";
+        if(item && source){
+          item.dataset.defaultImage = source;
+          item.dataset.galleryKey = key;
+        }
+        acc[key] = source;
+        return acc;
+      }, {});
+      const defaultGalleryAlt = galleryKeys.reduce((acc, key, index)=>{
+        const item = galleryItems()[index];
+        const imageEl = item ? item.querySelector("img") : null;
+        acc[key] = (imageEl && imageEl.getAttribute("alt")) || `Gallery Image ${index + 1}`;
+        return acc;
+      }, {});
+      let galleryImages = sanitizeGalleryImages(safeParse(localStorage.getItem(GALLERY_IMAGES_KEY), {}));
+      let activeLightboxKey = null;
+
       let content = {...defaults, ...safeParse(localStorage.getItem(CONTENT_KEY), {})};
       let editMode = false;
 
@@ -1940,10 +2138,227 @@
         document.getElementById("adminGallery4").value = content.gallery4 || "";
         document.getElementById("adminGallery5").value = content.gallery5 || "";
         document.getElementById("adminGallery6").value = content.gallery6 || "";
+
+        applyGalleryImages();
       }
 
       function persistContent(){
         localStorage.setItem(CONTENT_KEY, JSON.stringify(content));
+      }
+
+      function persistGalleryImages(){
+        galleryImages = sanitizeGalleryImages(galleryImages);
+        try{
+          if(Object.keys(galleryImages).length){
+            localStorage.setItem(GALLERY_IMAGES_KEY, JSON.stringify(galleryImages));
+          }else{
+            localStorage.removeItem(GALLERY_IMAGES_KEY);
+          }
+        }catch(error){
+          throw new Error("Storage is full. Use a smaller image or reset a saved gallery photo.");
+        }
+      }
+
+      function getGallerySrc(key){
+        return galleryImages[key] || defaultGalleryImages[key] || "";
+      }
+
+      function setAdminGalleryStatus(index, message, isError){
+        const status = document.getElementById(`adminGalleryStatus${index}`);
+        if(!status) return;
+        status.textContent = message;
+        status.dataset.state = isError ? "error" : "ok";
+      }
+
+      function applyGalleryImages(){
+        galleryItems().forEach((item, index)=>{
+          const key = galleryKeys[index];
+          if(!key) return;
+
+          const labelNode = item.querySelector(".gallery-label");
+          const labelText = (content[key] || (labelNode && labelNode.textContent.trim()) || defaultGalleryAlt[key] || `Gallery Image ${index + 1}`).trim();
+          const src = getGallerySrc(key);
+          const img = item.querySelector("img");
+
+          if(img){
+            img.src = src;
+            img.alt = labelText;
+          }
+
+          item.dataset.image = src;
+          item.dataset.galleryKey = key;
+
+          const preview = document.getElementById(`adminGalleryPreview${index + 1}`);
+          if(preview){
+            preview.src = src;
+            preview.alt = `${labelText} preview`;
+          }
+
+          setAdminGalleryStatus(index + 1, galleryImages[key] ? "Custom image saved" : "Using default image", false);
+        });
+
+        if(activeLightboxKey){
+          const lightboxImg = document.getElementById("lightboxImg");
+          const lightboxSrc = getGallerySrc(activeLightboxKey);
+          if(lightboxImg && lightboxSrc){
+            lightboxImg.src = lightboxSrc;
+            lightboxImg.alt = content[activeLightboxKey] || "Gallery Preview";
+          }
+        }
+      }
+
+      function isAllowedGalleryFile(file){
+        if(!file) return false;
+        const name = (file.name || "").toLowerCase();
+        return file.type === "image/png" || file.type === "image/jpeg" || /\.(png|jpe?g)$/i.test(name);
+      }
+
+      function readFileAsDataURL(file){
+        return new Promise((resolve, reject)=>{
+          const reader = new FileReader();
+          reader.onload = ()=>resolve(reader.result);
+          reader.onerror = ()=>reject(new Error("Unable to read the selected file."));
+          reader.readAsDataURL(file);
+        });
+      }
+
+      async function loadImageFromFile(file){
+        const source = await readFileAsDataURL(file);
+        return new Promise((resolve, reject)=>{
+          const image = new Image();
+          image.onload = ()=>resolve(image);
+          image.onerror = ()=>reject(new Error("The selected file is not a valid image."));
+          image.src = source;
+        });
+      }
+
+      function drawOptimizedImage(canvas, image, width, height, outputType){
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext("2d");
+        if(outputType === "image/jpeg"){
+          ctx.fillStyle = "#ffffff";
+          ctx.fillRect(0, 0, width, height);
+        }else{
+          ctx.clearRect(0, 0, width, height);
+        }
+        ctx.drawImage(image, 0, 0, width, height);
+      }
+
+      async function optimizeGalleryImage(file){
+        const image = await loadImageFromFile(file);
+        const canvas = document.createElement("canvas");
+        const charLimit = 850000;
+        const maxWidth = 1600;
+        const maxHeight = 1200;
+
+        let width = image.naturalWidth || image.width;
+        let height = image.naturalHeight || image.height;
+        const fitRatio = Math.min(1, maxWidth / width, maxHeight / height);
+        width = Math.max(1, Math.round(width * fitRatio));
+        height = Math.max(1, Math.round(height * fitRatio));
+
+        let outputType = file.type === "image/png" ? "image/png" : "image/jpeg";
+        let quality = 0.9;
+
+        drawOptimizedImage(canvas, image, width, height, outputType);
+        let dataUrl = canvas.toDataURL(outputType, quality);
+
+        let attempts = 0;
+        while(dataUrl.length > charLimit && attempts < 10){
+          attempts += 1;
+
+          if(outputType === "image/png"){
+            outputType = "image/jpeg";
+            quality = 0.88;
+          }else{
+            quality = Math.max(0.52, quality - 0.08);
+          }
+
+          const scale = dataUrl.length > charLimit * 1.35 ? 0.86 : 0.92;
+          width = Math.max(640, Math.round(width * scale));
+          height = Math.max(480, Math.round(height * scale));
+
+          drawOptimizedImage(canvas, image, width, height, outputType);
+          dataUrl = canvas.toDataURL(outputType, quality);
+        }
+
+        if(dataUrl.length > charLimit){
+          throw new Error("Image is too large to save safely. Please use a smaller PNG or JPG/JPEG.");
+        }
+
+        return dataUrl;
+      }
+
+      async function handleGalleryUpload(index, file){
+        const key = galleryKeys[index - 1];
+        if(!key) return;
+
+        const previousImages = {...galleryImages};
+
+        try{
+          setAdminGalleryStatus(index, "Processing image...", false);
+          const optimizedImage = await optimizeGalleryImage(file);
+          galleryImages[key] = optimizedImage;
+          persistGalleryImages();
+          applyGalleryImages();
+          showToast(`Gallery Image ${index} updated successfully.`);
+        }catch(error){
+          galleryImages = previousImages;
+          applyGalleryImages();
+          setAdminGalleryStatus(index, error.message, true);
+          showToast(error.message);
+        }
+      }
+
+      function resetGalleryImage(index){
+        const key = galleryKeys[index - 1];
+        if(!key) return;
+
+        if(!galleryImages[key]){
+          setAdminGalleryStatus(index, "Already using default image", false);
+          showToast(`Gallery Image ${index} is already using the default photo.`);
+          return;
+        }
+
+        delete galleryImages[key];
+
+        try{
+          persistGalleryImages();
+          applyGalleryImages();
+          showToast(`Gallery Image ${index} reset to default.`);
+        }catch(error){
+          showToast(error.message);
+        }
+      }
+
+      function bindGalleryAdminTools(){
+        galleryKeys.forEach((key, index)=>{
+          const displayIndex = index + 1;
+          const uploadInput = document.getElementById(`adminGalleryFile${displayIndex}`);
+          const resetButton = document.getElementById(`resetGalleryImage${displayIndex}`);
+
+          if(uploadInput){
+            uploadInput.addEventListener("change", async function(){
+              const file = this.files && this.files[0];
+              if(!file) return;
+
+              if(!isAllowedGalleryFile(file)){
+                this.value = "";
+                setAdminGalleryStatus(displayIndex, "Invalid file. Use PNG or JPG/JPEG only.", true);
+                showToast("Only PNG and JPG/JPEG files are allowed.");
+                return;
+              }
+
+              await handleGalleryUpload(displayIndex, file);
+              this.value = "";
+            });
+          }
+
+          if(resetButton){
+            resetButton.addEventListener("click", ()=>resetGalleryImage(displayIndex));
+          }
+        });
       }
 
       function showToast(message){
@@ -2034,6 +2449,7 @@
       });
 
       function closeLightbox(){
+        activeLightboxKey = null;
         document.getElementById("lightbox").classList.remove("active");
       }
 
@@ -2083,6 +2499,7 @@
       document.getElementById("themeToggle").addEventListener("click", cycleTheme);
 
       function openAdmin(){
+        applyGalleryImages();
         document.getElementById("adminPanel").classList.add("show");
         document.getElementById("adminBackdrop").classList.add("show");
       }
@@ -2168,12 +2585,15 @@
       document.getElementById("resetAdmin").addEventListener("click", ()=>{
         if(!confirm("Reset all saved website content to default?")) return;
         localStorage.removeItem(CONTENT_KEY);
+        localStorage.removeItem(GALLERY_IMAGES_KEY);
+        galleryImages = {};
         content = {...defaults};
         if(editMode) toggleInlineEdit();
         applyContent();
         showToast("Website content reset.");
       });
 
+      bindGalleryAdminTools();
       applyContent();
       renderInquiries();
     })();
